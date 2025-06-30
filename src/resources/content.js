@@ -9,7 +9,7 @@ const person = {
   role: "UX/UI Designer",
   avatar: "/images/avatar.jpg",
   email: "oluwalowojohn@gmail.com",
-  location: "Abuja/Nigeria", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Africa/Lagos", // ✅ Valid IANA timezone for Nigeria
   languages: ["English", "Yoruba", "Hausa"], // optional: Leave the array empty if you don't want to display languages
 };
 
