@@ -1,16 +1,16 @@
 import { Logo } from "@once-ui-system/core";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Toluwalope",
+  lastName: "oluwalowo",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "UX/UI Designer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "oluwalowojohn@gmail.com",
+  location: "Abuja/Nigeria", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Yoruba", "Hausa"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -19,7 +19,7 @@ const newsletter = {
   description: (
     <>
       I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      creativity, user experience and engineering.
     </>
   ),
 };
@@ -30,17 +30,17 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/cryptoLab-service",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/oluwalowojohn/",
   },
   {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "Twotter",
+    icon: "X",
+    link: "https://www.x.com/EncryptedMFI",
   },
   {
     name: "Email",
@@ -55,16 +55,16 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Building bridges between design, code and user experiences</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
+    title: <>Recent project: <strong className="ml-4">OptiGrade Mobile App</strong></>,
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Toluwalope John, a designer and founder of <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive and purposeful
+      <br /> user interfaces and experiences. Through ongoing exploration, I prototype new ideas and build my own projects and tools—like Optigrade, a tool built to simplify and streamline educational workflows for smarter academic  performance.
     </>
   ),
 };
@@ -83,16 +83,14 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://zcal.co/oluwalowojohn",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Toluwalope John is an Nigerian-based UI/UX and graphics designer, entry-level data-scientist, and budding software developer and AI. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel both intuitive and impactful. He’s currently channeling that energy into Optigrade—a platform he’s developing to rethink and enhance academic performace in Nigerian higher Institutions.
       </>
     ),
   },
@@ -101,17 +99,21 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Zoe Tech Hub",
+        timeframe: "2017 - Present",
+        role: "Founder",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Redesigned UI/UX and graphcs for key platforms under Zoe Tech Hub—my design and innovation hub—resulting in a 35%+ boost in user engagement and approximately 40% faster load times.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Led multiple graphics design projects, digital literacy campaigns, and office productivity initiatives, enhancing client impact and improving overall user experience.
+          </>,
+          <>
+            Conducted extensive user research and usability analysis to guide UI/UX and product design decisions.
+          </>,
+          <>
+            Integrated AI-powered tools into the design workflow, enabling faster iteration cycles and more data-driven, user-centered solutions.
           </>,
         ],
         images: [
@@ -125,17 +127,19 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "CM Project House",
+        timeframe: "2024 - 2025",
+        role: "Research Analysit and Designer",
         achievements: [
           <>
             Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            design consistency by 25%.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Led design and graphics efforts in collaboration with cross-functional teams to launch a new academic product line, which contributed to a 15% increase in company revenue and improved student engagement.
+          </>,
+          <>
+            Produced visually compelling digital and print publications at Zoe Tech Hub, combining effective layout design with strategic branding to support digital literacy campaigns and elevate the firm’s creative impact.
           </>,
         ],
         images: [],
@@ -147,12 +151,12 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Ekiti State University, Ado-Ekiti",
+        description: <>Studied Physics.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "The 3 Million Technical Talent",
+        description: <>Studied User Interface and User Experience Design.</>,
       },
     ],
   },
@@ -162,7 +166,7 @@ const about = {
     skills: [
       {
         title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        description: <>Designing next-gen user interfaces with Figma—leveraging its powerful prototyping, design systems, and collaboration features to craft intuitive, scalable digital experiences.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -180,8 +184,34 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "Google Studio",
+        description: <>Creating insightful visual narratives using Google Looker Studio—transforming raw data into interactive dashboards and compelling reports that support smarter decision-making and user-focused digital strategies.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Notion Studio",
+        description: <>Designing and organizing knowledge systems with Notion—building structured workspaces, interactive docs, and dynamic content hubs that enhance collaboration and user experience across teams and personal projects.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Jupyter Notebook",
+        description: <>Analyzing data and visualizing insights with Jupyter Notebook—leveraging Python-powered notebooks to explore datasets, build prototypes, and communicate findings through clear, interactive reports.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
