@@ -38,8 +38,8 @@ const social = [
     link: "https://www.linkedin.com/oluwalowojohn/",
   },
   {
-    name: "Twotter",
-    icon: "X",
+    name: "Twitter",
+    icon: "Threads",
     link: "https://www.x.com/EncryptedMFI",
   },
   {
