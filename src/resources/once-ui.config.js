@@ -13,7 +13,7 @@ const routes = {
 
 const display = {
   location: true,
-  time: true,
+  time: false,
   themeSwitcher: true
 };
 

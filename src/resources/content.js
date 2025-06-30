@@ -1,12 +1,12 @@
 import { Logo } from "@once-ui-system/core";
 
 const person = {
-  firstName: "Toluwalope",
-  lastName: "oluwalowo",
+  firstName: "Tolulope",
+  lastName: "John",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "UX/UI Designer",
+  role: "UX/UI Designer | Product Desinger | Analyst",
   avatar: "/images/avatar.jpg",
   email: "oluwalowojohn@gmail.com",
   location: "Africa/Lagos", // ✅ Valid IANA timezone for Nigeria
@@ -63,7 +63,7 @@ const home = {
   },
   subline: (
     <>
-      I'm Toluwalope John, a designer and founder of <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive and purposeful
+      I'm Toluwalope John O., a designer and founder of <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive and purposeful
       <br /> user interfaces and experiences. Through ongoing exploration, I prototype new ideas and build my own projects and tools—like Optigrade, a tool built to simplify and streamline educational workflows for smarter academic  performance.
     </>
   ),
