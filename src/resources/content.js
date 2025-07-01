@@ -62,11 +62,22 @@ const home = {
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
-    <>
-      I'm Toluwalope John, a designer and founder of <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive and purposeful
-      <br /> user interfaces and experiences. Through ongoing exploration, I prototype new ideas and build my own projects and tools—like Optigrade, a tool built to simplify and streamline educational workflows for smarter academic  performance.
-    </>
-  ),
+  <>
+    I'm Toluwalope John, a designer and founder of{" "}
+    <Logo
+      icon="/trademarks/wordmark-dark.svg"
+      style={{
+        display: "inline-block",
+        verticalAlign: "middle",
+        height: "1em",
+        marginLeft: "0.25em",
+        marginRight: "0.25em",
+      }}
+    />, where I craft intuitive and purposeful
+    <br />
+    user interfaces and experiences...
+  </>
+),
 };
 
 const about = {
