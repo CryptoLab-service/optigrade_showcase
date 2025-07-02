@@ -62,8 +62,10 @@ export async function GET(request: Request) {
             gap: "5rem",
           }}
         >
-          <img
+          <image
             src={baseURL + person.avatar}
+            alt={`${person.name}'s avatar`}
+            width={192} // 12rem = 192px
             style={{
               width: "12rem",
               height: "12rem",
