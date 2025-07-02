@@ -2,6 +2,7 @@ import '@once-ui-system/core/css/styles.css';
 import '@once-ui-system/core/css/tokens.css';
 import '@/resources/custom.css';
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Analytics from "@vercel/analytics";
 import classNames from "classnames";
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
