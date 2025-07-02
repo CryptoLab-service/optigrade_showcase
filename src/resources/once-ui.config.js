@@ -184,7 +184,7 @@ const schema = {
 const sameAs = {
   twitter: "https://www.x.com/EncryptedMFI",
   linkedin: "https://www.linkedin.com/oluwalowojohn",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  discord: "https://discord.com/oluwalowojohn",
 };
 
 export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
