@@ -6,6 +6,8 @@ export const runtime = "nodejs";
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const title = url.searchParams.get("title") || "Portfolio";
+  const tag = url.searchParams.get("tag") || "Case Study";
+  const emoji = url.searchParams.get("emoji") || "🚀";
 
   async function loadGoogleFont(font: string) {
     const fontUrl = `https://fonts.googleapis.com/css2?family=${font}`;
@@ -26,27 +28,45 @@ export async function GET(request: Request) {
         style={{
           width: 1280,
           height: 720,
-          display: "flex",
-          flexDirection: "column",
-          padding: 80,
           background: "linear-gradient(to right, #0f0f0f, #1a1a1a)",
           color: "white",
           fontFamily: "Geist, Arial, sans-serif",
+          display: "flex",
+          flexDirection: "column",
+          padding: 80,
+          position: "relative",
         }}
       >
-        {/* Title Block */}
+        {/* Tag Overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: 40,
+            right: 40,
+            backgroundColor: "#ff004c",
+            color: "white",
+            padding: "12px 24px",
+            borderRadius: 999,
+            fontSize: 28,
+            fontWeight: 600,
+          }}
+        >
+          {emoji} {tag}
+        </div>
+
+        {/* Title */}
         <div
           style={{
             fontSize: 96,
             fontWeight: 700,
-            lineHeight: 1.2,
             marginBottom: 60,
+            lineHeight: 1.2,
           }}
         >
           {title}
         </div>
 
-        {/* Profile Block */}
+        {/* Avatar and Info */}
         <div
           style={{
             display: "flex",
