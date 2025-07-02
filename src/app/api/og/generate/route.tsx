@@ -4,116 +4,108 @@ import { baseURL, person } from "@/resources";
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {
-  let url = new URL(request.url);
-  let title = url.searchParams.get("title") || "Portfolio";
+  const url = new URL(request.url);
+  const title = url.searchParams.get("title") || "Portfolio";
 
   async function loadGoogleFont(font: string) {
-    const url = `https://fonts.googleapis.com/css2?family=${font}`
-    const css = await (await fetch(url)).text()
-    const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/)
+    const fontUrl = `https://fonts.googleapis.com/css2?family=${font}`;
+    const css = await (await fetch(fontUrl)).text();
+    const match = css.match(/src: url\((.+?)\) format\('(opentype|truetype)'\)/);
 
-    if (resource) {
-      const response = await fetch(resource[1])
-      if (response.status == 200) {
-        return await response.arrayBuffer()
-      }
+    if (match) {
+      const res = await fetch(match[1]);
+      if (res.ok) return await res.arrayBuffer();
     }
 
-    throw new Error('failed to load font data')
+    throw new Error("Failed to load font");
   }
 
   return new ImageResponse(
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        padding: "6rem",
-        background: "#151515",
-      }}
-    >
+    (
       <div
         style={{
+          width: 1280,
+          height: 720,
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          gap: "4rem",
-          fontStyle: "normal",
+          padding: 80,
+          background: "linear-gradient(to right, #0f0f0f, #1a1a1a)",
           color: "white",
+          fontFamily: "Geist, Arial, sans-serif",
         }}
       >
-        <span
+        {/* Title Block */}
+        <div
           style={{
-            padding: "1rem",
-            fontSize: "6rem",
-            lineHeight: "8rem",
-            letterSpacing: "-0.05em",
-            whiteSpace: "wrap",
-            textWrap: "balance",
-            overflow: "hidden"
+            fontSize: 96,
+            fontWeight: 700,
+            lineHeight: 1.2,
+            marginBottom: 60,
           }}
         >
           {title}
-        </span>
+        </div>
+
+        {/* Profile Block */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "5rem",
+            gap: 64,
           }}
         >
-        <img
-          src={baseURL + person.avatar}
-          alt={`${person.name}'s avatar`}
-          style={{
-            width: "12rem",
-            height: "12rem",
-            objectFit: "cover",
-            borderRadius: "100%",
-          }}
-        />
+          <img
+            src={baseURL + person.avatar}
+            alt={`${person.name}'s avatar`}
+            style={{
+              width: 192,
+              height: 192,
+              objectFit: "cover",
+              borderRadius: "50%",
+              border: "5px solid white",
+            }}
+          />
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "0.75rem",
+              gap: 16,
             }}
           >
-            <span
+            <div
               style={{
-                fontSize: "4.5rem",
-                lineHeight: "4.5rem",
-                whiteSpace: "pre-wrap",
-                textWrap: "balance",
+                fontSize: 64,
+                fontWeight: 600,
               }}
             >
               {person.name}
-            </span>
-            <span
+            </div>
+            <div
               style={{
-                fontSize: "2.5rem",
-                lineHeight: "2.5rem",
-                whiteSpace: "pre-wrap",
-                textWrap: "balance",
-                opacity: "0.6",
+                fontSize: 36,
+                opacity: 0.7,
+                backgroundColor: "#262626",
+                padding: "8px 16px",
+                borderRadius: 8,
+                display: "inline-block",
               }}
             >
               {person.role}
-            </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>,
+    ),
     {
       width: 1280,
       height: 720,
       fonts: [
         {
           name: "Geist",
-          data: await loadGoogleFont('Geist:wght@400'),
+          data: await loadGoogleFont("Geist:wght@400"),
           style: "normal",
         },
       ],
-    },
+    }
   );
 }
