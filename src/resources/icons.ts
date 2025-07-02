@@ -22,7 +22,7 @@ import {
   PiImageDuotone,
 } from "react-icons/pi";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaTwitter } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -42,7 +42,7 @@ export const iconLibrary: Record<string, IconType> = {
   github: FaGithub,
   linkedin: FaLinkedin,
   x: FaX,
-  threads: FaThreads,
+  twitter: FaTwitter,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
   rocket: HiOutlineRocketLaunch
