@@ -23,6 +23,7 @@ import {
 } from "react-icons/pi";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaTwitter } from "react-icons/fa6";
+import { Twitter } from "lucide-react"
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -41,8 +42,8 @@ export const iconLibrary: Record<string, IconType> = {
   eyeOff: HiOutlineEyeSlash,
   github: FaGithub,
   linkedin: FaLinkedin,
+  twitter: FaTwitter, // ✅ now available via icon: "twitter"
   x: FaX,
-  twitter: FaTwitter,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
   rocket: HiOutlineRocketLaunch
