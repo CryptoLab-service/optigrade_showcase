@@ -23,7 +23,6 @@ import {
 } from "react-icons/pi";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaTwitter } from "react-icons/fa6";
-import { Twitter } from "lucide-react"
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -42,11 +41,11 @@ export const iconLibrary: Record<string, IconType> = {
   eyeOff: HiOutlineEyeSlash,
   github: FaGithub,
   linkedin: FaLinkedin,
-  twitter: FaTwitter, // ✅ now available via icon: "twitter"
+  twitter: FaTwitter, // ✅ case and key are consistent
   x: FaX,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
-  rocket: HiOutlineRocketLaunch
+  rocket: HiOutlineRocketLaunch,
 };
 
 export type IconLibrary = typeof iconLibrary;
