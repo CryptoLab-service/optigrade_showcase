@@ -39,7 +39,7 @@ const social = [
   },
   {
     name: "Twitter",
-    icon: "Threads",
+    icon: "Twitter",
     link: "https://www.x.com/EncryptedMFI",
   },
   {
