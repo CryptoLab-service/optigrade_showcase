@@ -73,12 +73,16 @@ export const Header = () => {
               border: "1px solid rgba(255, 255, 255, 0.15)",
               boxShadow: "0 10px 24px rgba(0, 0, 0, 0.2)",
               padding: "16px 32px",
-              height: "60px",           // ✅ Reduced from 88px
-              width: "100%",            // Full fluid width
-              maxWidth: "5280px",       // ✅ Extended max width
+              height: "60px",
+              width: "auto",                  // ✅ Let it size based on content
+              maxWidth: "100%",               // ✅ Prevent overflow
+              minWidth: "fit-content",        // ✅ Ensure it expands to fit all buttons
               margin: "0 auto",
+              display: "flex",
               alignItems: "center",
-              justifyContent: "space-between", // Helps layout button spacing
+              justifyContent: "center",
+              flexWrap: "wrap",               // ✅ Allow wrapping on smaller screens
+              gap: "12px"                     // Optional: spacing between buttons
             }}
             horizontal="center"
             zIndex={1}
