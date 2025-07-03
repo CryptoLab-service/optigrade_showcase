@@ -66,17 +66,22 @@ export const Header = () => {
         <Flex fillWidth horizontal="center">
           <Flex
             style={{
-              background: "rgba(255, 255, 255, 0.06)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-              borderRadius: "16px",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              boxShadow: "0 8px 24px rgba(0, 0, 0, 0.15)",
+              background: "rgba(255, 255, 255, 0.08)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              borderRadius: "24px",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              boxShadow: "0 12px 32px rgba(0, 0, 0, 0.2)",
+              padding: "12px 36px",            // more horizontal space
+              minHeight: "72px",               // standard navbar height
+              alignItems: "center",
+              justifyContent: "center",
             }}
-            padding="4"
             horizontal="center"
             zIndex={1}
           >
+            {/* Your nav buttons here */}
+          </Flex>
             <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
                 <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
