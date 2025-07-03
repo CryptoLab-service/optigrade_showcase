@@ -67,13 +67,16 @@ export const Header = () => {
           <Flex
             style={{
               background: "rgba(255, 255, 255, 0.08)",
-              backdropFilter: "blur(16px)",
-              WebkitBackdropFilter: "blur(16px)",
-              borderRadius: "24px",
+              backdropFilter: "blur(18px)",
+              WebkitBackdropFilter: "blur(18px)",
+              borderRadius: "28px",
               border: "1px solid rgba(255, 255, 255, 0.15)",
-              boxShadow: "0 12px 32px rgba(0, 0, 0, 0.2)",
-              padding: "12px 36px",            // more horizontal space
-              minHeight: "72px",               // standard navbar height
+              boxShadow: "0 16px 48px rgba(0, 0, 0, 0.25)",
+              padding: "20px 48px",
+              minHeight: "88px",
+              maxWidth: "92%",
+              width: "100%",
+              margin: "0 auto",
               alignItems: "center",
               justifyContent: "center",
             }}
