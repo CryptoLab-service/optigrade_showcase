@@ -73,10 +73,11 @@ export const Header = () => {
               border: "1px solid rgba(255, 255, 255, 0.15)",
               boxShadow: "0 10px 24px rgba(0, 0, 0, 0.2)",
               padding: "16px 32px",
-              height: "40px",
+              height: "50px",
               width: "auto",                  // ✅ Let it size based on content
               maxWidth: "100%",               // ✅ Prevent overflow
               minWidth: "fit-content",        // ✅ Ensure it expands to fit all buttons
+              maxHeight: "100%",               // ✅ Prevent overflow
               margin: "0 auto",
               display: "flex",
               alignItems: "center",
