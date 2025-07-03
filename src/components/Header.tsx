@@ -46,7 +46,7 @@ export const Header = () => {
   return (
     <>
       <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
-
+      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
         position="unset"
@@ -73,9 +73,9 @@ export const Header = () => {
               border: "1px solid rgba(255, 255, 255, 0.15)",
               boxShadow: "0 10px 24px rgba(0, 0, 0, 0.2)",
               padding: "16px 32px",
-              height: "72px",           // ✅ Reduced from 88px
+              height: "80px",           // ✅ Reduced from 88px
               width: "100%",            // Full fluid width
-              maxWidth: "1280px",       // ✅ Extended max width
+              maxWidth: "2180px",       // ✅ Extended max width
               margin: "0 auto",
               alignItems: "center",
               justifyContent: "space-between", // Helps layout button spacing
