@@ -75,7 +75,7 @@ export const Header = () => {
               padding: "16px 32px",
               height: "44px",           // ✅ Reduced from 88px
               width: "100%",            // Full fluid width
-              maxWidth: "5280px",       // ✅ Extended max width
+              maxWidth: "8280px",       // ✅ Extended max width
               margin: "0 auto",
               alignItems: "center",
               justifyContent: "space-between", // Helps layout button spacing
