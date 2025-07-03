@@ -2,16 +2,14 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
 import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
-
 import { routes, display, person, about, blog, work, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
   timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  locale?: string;
 };
 
 const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
@@ -63,12 +61,18 @@ export const Header = () => {
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
           {display.location && <Flex hide="s">{person.location}</Flex>}
         </Flex>
+
+        {/* 🌫️ Glassmorphic Navbar */}
         <Flex fillWidth horizontal="center">
           <Flex
-            background="page"
-            border="neutral-alpha-weak"
-            radius="m-4"
-            shadow="l"
+            style={{
+              background: "rgba(255, 255, 255, 0.06)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+              borderRadius: "16px",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              boxShadow: "0 8px 24px rgba(0, 0, 0, 0.15)",
+            }}
             padding="4"
             horizontal="center"
             zIndex={1}
@@ -155,6 +159,7 @@ export const Header = () => {
             </Flex>
           </Flex>
         </Flex>
+
         <Flex fillWidth horizontal="end" vertical="center">
           <Flex
             paddingRight="12"
