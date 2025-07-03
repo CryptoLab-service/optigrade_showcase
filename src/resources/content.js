@@ -90,7 +90,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Toluwalope John is an Nigerian-based UI/UX and graphics designer, entry-level data-scientist, and budding software developer and AI. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel both intuitive and impactful. He’s currently channeling that energy into Optigrade—a platform he’s developing to rethink and enhance academic performace in Nigerian higher Institutions.
+        Toluwalope John is an UI/UX and graphics designer, entry-level data-scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel both intuitive and impactful. He’s currently channeling that energy into Optigrade—a platform he’s developing to rethink and enhance academic performace in Nigerian higher Institutions.
       </>
     ),
   },
