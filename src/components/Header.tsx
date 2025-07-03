@@ -67,18 +67,18 @@ export const Header = () => {
           <Flex
             style={{
               background: "rgba(255, 255, 255, 0.08)",
-              backdropFilter: "blur(18px)",
-              WebkitBackdropFilter: "blur(18px)",
-              borderRadius: "28px",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              borderRadius: "20px",
               border: "1px solid rgba(255, 255, 255, 0.15)",
-              boxShadow: "0 16px 48px rgba(0, 0, 0, 0.25)",
-              padding: "20px 48px",
-              minHeight: "88px",
-              maxWidth: "92%",
-              width: "100%",
+              boxShadow: "0 10px 24px rgba(0, 0, 0, 0.2)",
+              padding: "16px 32px",
+              height: "72px",           // ✅ Reduced from 88px
+              width: "100%",            // Full fluid width
+              maxWidth: "1280px",       // ✅ Extended max width
               margin: "0 auto",
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "space-between", // Helps layout button spacing
             }}
             horizontal="center"
             zIndex={1}
