@@ -74,6 +74,7 @@ export async function GET(request: Request) {
             gap: 64,
           }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={baseURL + person.avatar}
             alt={`${person.name}'s avatar`}
