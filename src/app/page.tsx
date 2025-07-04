@@ -127,7 +127,7 @@ export default function Home() {
           View My CV
         </Heading>
         <iframe
-          src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
+          src="https://drive.google.com/file/d/15hR0lR5yNWEsGFyNOXnYyXdHXkPqohND/view?usp=sharing"
           width="100%"
           height="640"
           style={{
