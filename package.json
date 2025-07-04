@@ -36,4 +36,7 @@
     "eslint-config-next": "^13.5.11",
     "typescript": "^5.8.3"
   }
+  "scripts": {
+  "install": "npm install --legacy-peer-deps",
+  }
 }
