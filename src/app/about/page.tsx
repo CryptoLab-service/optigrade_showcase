@@ -49,6 +49,11 @@ export default function About() {
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
     },
+    {
+      title: about.certification.title,
+      display: about.certification.display,
+      items: about.certification.skills.map((skill) => certification.title),
+    },
   ];
   return (
     <Column maxWidth="m">
