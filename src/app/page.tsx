@@ -9,6 +9,8 @@ import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 import { AboutCard } from "@/components/about/AboutCard";
 import { SkillsGrid } from "@/components/about/SkillsGrid";
+import { Certifications } from "@/components/about/Certifications";
+import { Contact } from "@/components/Contact";
 
 export default function Home() {
   return (
