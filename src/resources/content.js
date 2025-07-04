@@ -222,23 +222,33 @@ const about = {
           },
         ],
       },
-    ],
-        certification: {
+   ],
+  certification: {
     display: true, // set to false to hide this section
-    title: "Certification",
+    title: "Certifications",
     institutions: [
       {
-        name: "Ekiti State University, Ado-Ekiti",
-        description: <>Studied Physics.</>,
+        name: "ALX Africa",
+        description: <>Completed Frontend Engineering Training under The Room Fellowship.</>,
       },
       {
-        name: "The 3 Million Technical Talent",
-        description: <>Studied User Interface and User Experience Design.</>,
+        name: "Access Bank Youthrive Internship",
+        description: <>Certified in UI/UX Design with career acceleration support.</>,
       },
-    ],
+      {
+        name: "3MTT Nigeria",
+        description: <>Certified in User Interface and User Experience Design as part of the Federal Training Initiative.</>,
+      },
+      {
+        name: "Cisco Networking Academy",
+        description: <>Completed Introduction to Cybersecurity and Networking Basics.</>,
+      },
+      {
+        name: "LinkedIn Learning",
+        description: <>Completed courses on Design Thinking, Figma Essentials, and Creative Productivity.</>,
+      }
+    ]
   },
-  },
-};
 
 const blog = {
   path: "/blog",
