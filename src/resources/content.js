@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "UX/UI Designer | Product Desinger | Analyst",
+  role: "Designer | Analyst | Creative technologist",
   avatar: "/images/avatar.jpg",
   email: "oluwalowojohn@gmail.com",
   location: "Africa/Lagos", // ✅ Valid IANA timezone for Nigeria
