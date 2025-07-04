@@ -1,6 +1,8 @@
 import React from "react";
-
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
+import {
+  Heading, Flex, Text, Button, Avatar, RevealFx, Column,
+  Badge, Row, Schema, Line
+} from "@once-ui-system/core";
 import { home, about, person, newsletter, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
@@ -9,6 +11,7 @@ import { Posts } from "@/components/blog/Posts";
 export default function Home() {
   return (
     <Column maxWidth="m" gap="xl" horizontal="center">
+      {/* 🧠 SEO Schema */}
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -22,15 +25,24 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth paddingY="24" gap="m">
+
+      {/* 🧑🏽‍💻 Hero Section */}
+      <Column fillWidth paddingY="48" gap="m">
         <Column maxWidth="s">
           {home.featured.display && (
-          <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
-            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
-              href={home.featured.href}>
-              <Row paddingY="2">{home.featured.title}</Row>
-            </Badge>
-          </RevealFx>
+            <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
+              <Badge
+                background="brand-alpha-weak"
+                paddingX="12"
+                paddingY="4"
+                onBackground="neutral-strong"
+                textVariant="label-default-s"
+                arrow={false}
+                href={home.featured.href}
+              >
+                <Row paddingY="2">{home.featured.title}</Row>
+              </Badge>
+            </RevealFx>
           )}
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
             <Heading wrap="balance" variant="display-strong-xl">
@@ -67,9 +79,25 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+
+      {/* 🧰 Skills & Tools */}
+      <RevealFx translateY="16" delay={0.5}>
+        <Flex horizontal="center" wrap gap="24" paddingY="32">
+          <img src="/logos/figma.png" alt="Figma" width="40" />
+          <img src="/logos/notion.png" alt="Notion" width="40" />
+          <img src="/logos/photoshop.png" alt="Photoshop" width="40" />
+          <img src="/logos/xd.png" alt="Adobe XD" width="40" />
+          <img src="/logos/microsoft.png" alt="Microsoft" width="40" />
+          <img src="/logos/cisco.png" alt="Cisco" width="40" />
+        </Flex>
+      </RevealFx>
+
+      {/* 🖼️ Featured Projects */}
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
+
+      {/* 📚 Blog Preview */}
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l" paddingTop="24">
@@ -82,8 +110,38 @@ export default function Home() {
           </Flex>
         </Flex>
       )}
-      <Projects range={[2]} />
+
+      {/* 🧑🏽‍🎓 Case Study Scroll Zone */}
+      <RevealFx translateY="24" delay={0.8}>
+        <Projects range={[2]} />
+      </RevealFx>
+
+      {/* 📄 Embedded Google CV */}
+      <RevealFx translateY="24" delay={1}>
+        <Heading variant="display-strong-xs" paddingBottom="16">
+          View My CV
+        </Heading>
+        <iframe
+          src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
+          width="100%"
+          height="640"
+          style={{
+            borderRadius: "16px",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(12px)",
+            marginTop: "24px",
+          }}
+          allow="autoplay"
+        ></iframe>
+      </RevealFx>
+
+      {/* 📬 Newsletter or Contact */}
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
+
+      {/* 🪙 Footer */}
+      <Flex horizontal="center" vertical="center" padding="32" textVariant="caption">
+        &copy; {new Date().getFullYear()} Oluwalowo John Profolio
+      </Flex>
     </Column>
   );
 }
