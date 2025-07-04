@@ -220,8 +220,8 @@ const about = {
   },
   certification: {
     display: true,
-    title: "Certifications",
-    institutions: [
+    title: "Certification",
+    awards: [
       {
         name: "ALX Africa",
         description: <>Completed Frontend Engineering Training under The Room Fellowship.</>,
