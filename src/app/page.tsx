@@ -109,37 +109,13 @@ export default function Home() {
         <Projects range={[2]} />
       </RevealFx>
 
-      {/* 📄 Embedded Google CV */}
-      <RevealFx translateY="24" delay={1}>
-        <Heading variant="display-strong-xs" paddingBottom="16">
-          View My CV
-        </Heading>
-        <iframe
-          src="https://drive.google.com/file/d/15hR0lR5yNWEsGFyNOXnYyXdHXkPqohND/view?usp=sharing"
-          width="100%"
-          height="640"
-          style={{
-            backdropFilter: "blur(16px)",
-            width: "auto",
-            maxWidth: "100%",
-            minWidth: "fit-content",
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "12px",
-          }}
-          allow="autoplay"
-        ></iframe>
-      </RevealFx>
-
       {/* 📬 Newsletter or Contact */}
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
 
-      {/* 🪙 Footer */}
+      {/* 🪙 Footer 
       <Flex horizontal="center" vertical="center" padding="32" textVariant="display-default-xs">
         © {new Date().getFullYear()} Oluwalowo John Profolio
-      </Flex>
+      </Flex> */}
     </Column>
   );
 }
