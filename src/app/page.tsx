@@ -130,10 +130,15 @@ export default function Home() {
           width="100%"
           height="640"
           style={{
-            borderRadius: "16px",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-            backdropFilter: "blur(12px)",
-            marginTop: "24px",
+            backdropFilter: "blur(16px)",
+            width: "auto",
+            maxWidth: "100%",
+            minWidth: "fit-content",
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "12px",
           }}
           allow="autoplay"
         ></iframe>
