@@ -1,4 +1,5 @@
 import { Heading, Text } from "@once-ui-system/core";
+import Image from "next/image";
 
 <div style={{ scrollSnapType: "y mandatory", overflowY: "scroll", height: "100vh" }}>
   <section style={{ scrollSnapAlign: "start", height: "100vh", padding: "48px" }}>
@@ -7,7 +8,7 @@ import { Heading, Text } from "@once-ui-system/core";
   </section>
   <section style={{ scrollSnapAlign: "start", height: "100vh", padding: "48px" }}>
     <Heading variant="heading-default-l">💡 The Solution</Heading>
-    <img src="/images/optigrade-dashboard.png" width="100%" />
+    <image src="/images/optigrade-dashboard.png" width="100%" />
   </section>
   <section style={{ scrollSnapAlign: "start", height: "100vh", padding: "48px" }}>
     <Heading variant="heading-default-l">📈 The Outcome</Heading>
