@@ -148,7 +148,7 @@ export default function Home() {
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
 
       {/* 🪙 Footer */}
-      <Flex horizontal="center" vertical="center" padding="32" textVariant="caption">
+      <Flex horizontal="center" vertical="center" padding="32" textVariant="display-default-xs">
         &copy; {new Date().getFullYear()} Oluwalowo John Profolio
       </Flex>
     </Column>
