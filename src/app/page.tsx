@@ -7,6 +7,7 @@ import { home, about, person, newsletter, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import { AboutCard } from "@/components/about/AboutCard";
 
 export default function Home() {
   return (
