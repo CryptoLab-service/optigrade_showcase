@@ -1,7 +1,7 @@
 import { Heading, Flex, Column, Text } from "@once-ui-system/core";
 import Image from "next/image";
 import styles from "./certifications.module.scss"; // optional custom styling
-import { motion } from "framer-motion"; // animation support
+import { motion } from "motion/react"; // animation support
 
 const certifications = [
   {
