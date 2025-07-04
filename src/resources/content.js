@@ -223,7 +223,7 @@ const about = {
         ],
       },
     ],
-        award: {
+        certification: {
     display: true, // set to false to hide this section
     title: "Certification",
     institutions: [
