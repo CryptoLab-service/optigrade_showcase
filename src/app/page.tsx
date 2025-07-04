@@ -8,6 +8,7 @@ import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 import { AboutCard } from "@/components/about/AboutCard";
+import { SkillsGrid } from "@/components/about/SkillsGrid";
 
 export default function Home() {
   return (
