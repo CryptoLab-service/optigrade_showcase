@@ -223,6 +223,20 @@ const about = {
         ],
       },
     ],
+        award: {
+    display: true, // set to false to hide this section
+    title: "Certification",
+    institutions: [
+      {
+        name: "Ekiti State University, Ado-Ekiti",
+        description: <>Studied Physics.</>,
+      },
+      {
+        name: "The 3 Million Technical Talent",
+        description: <>Studied User Interface and User Experience Design.</>,
+      },
+    ],
+  },
   },
 };
 
