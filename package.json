@@ -6,7 +6,8 @@
     "export": "next export",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "install": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -35,8 +36,5 @@
     "eslint": "^8.56.0",
     "eslint-config-next": "^13.5.11",
     "typescript": "^5.8.3"
-  }
-  "scripts": {
-  "install": "npm install --legacy-peer-deps",
   }
 }
