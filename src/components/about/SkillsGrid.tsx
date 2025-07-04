@@ -1,5 +1,5 @@
 import { Flex } from "@once-ui-system/core";
-
+import Image from "next/image";
 export const SkillsGrid = () => (
   <Flex wrap horizontal="center" gap="24" paddingY="32">
     <img src="/logos/figma.png" alt="Figma" width="40" />
