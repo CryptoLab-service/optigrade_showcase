@@ -11,6 +11,7 @@ import { AboutCard } from "@/components/about/AboutCard";
 import { SkillsGrid } from "@/components/about/SkillsGrid";
 import { Certifications } from "@/components/about/Certifications";
 import { Contact } from "@/components/Contact";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -87,12 +88,12 @@ export default function Home() {
       {/* 🧰 Skills & Tools */}
       <RevealFx translateY="16" delay={0.5}>
         <Flex horizontal="center" wrap gap="24" paddingY="32">
-          <img src="/logos/figma.png" alt="Figma" width="40" />
-          <img src="/logos/notion.png" alt="Notion" width="40" />
-          <img src="/logos/photoshop.png" alt="Photoshop" width="40" />
-          <img src="/logos/xd.png" alt="Adobe XD" width="40" />
-          <img src="/logos/microsoft.png" alt="Microsoft" width="40" />
-          <img src="/logos/cisco.png" alt="Cisco" width="40" />
+          <Image src="/logos/figma.png" alt="Figma" width={40} height={40} style={{ objectFit: "contain" }} />
+          <Image src="/logos/notion.png" alt="Notion" width={40} height={40} style={{ objectFit: "contain" }} />
+          <Image src="/logos/photoshop.png" alt="Photoshop" width={40} height={40} style={{ objectFit: "contain" }} />
+          <Image src="/logos/xd.png" alt="Adobe XD" width={40} height={40} style={{ objectFit: "contain" }} />
+          <Image src="/logos/microsoft.png" alt="Microsoft" width={40} height={40} style={{ objectFit: "contain" }} />
+          <Image src="/logos/cisco.png" alt="Cisco" width={40} height={40} style={{ objectFit: "contain" }} />
         </Flex>
       </RevealFx>
 
@@ -149,7 +150,7 @@ export default function Home() {
 
       {/* 🪙 Footer */}
       <Flex horizontal="center" vertical="center" padding="32" textVariant="display-default-xs">
-        &copy; {new Date().getFullYear()} Oluwalowo John Profolio
+        © {new Date().getFullYear()} Oluwalowo John Profolio
       </Flex>
     </Column>
   );
