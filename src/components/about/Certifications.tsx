@@ -1,7 +1,7 @@
 import { Heading, Flex, Column, Text } from "@once-ui-system/core";
 import Image from "next/image";
 import styles from "./certifications.module.scss"; // optional custom styling
-import { motion } from "motion/react"; // animation support
+import { motion } from "framer-motion"; // Updated import for framer-motion
 
 const certifications = [
   {
@@ -41,7 +41,6 @@ export const Certifications = () => (
     <Heading variant="display-strong-xs" paddingBottom="8">
       🎓 Certified By
     </Heading>
-
     <Flex wrap gap="xl" horizontal="center" paddingBottom="32">
       {certifications.map((cert, index) => (
         <motion.div
@@ -51,14 +50,19 @@ export const Certifications = () => (
           transition={{ duration: 0.4, delay: index * 0.1 }}
           className={styles.card} // optional styling
         >
-          <Column horizontal="center" vertical="center" padding="m" style={{
-            border: "1px solid rgba(255,255,255,0.1)",
-            borderRadius: "16px",
-            background: "rgba(255,255,255,0.05)",
-            backdropFilter: "blur(8px)",
-            maxWidth: "160px",
-            textAlign: "center"
-          }}>
+          <Column
+            horizontal="center"
+            vertical="center"
+            padding="m"
+            style={{
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: "16px",
+              background: "rgba(255,255,255,0.05)",
+              backdropFilter: "blur(8px)",
+              maxWidth: "160px",
+              textAlign: "center"
+            }}
+          >
             <Image
               src={cert.src}
               alt={cert.alt}
