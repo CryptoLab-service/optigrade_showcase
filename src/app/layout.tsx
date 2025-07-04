@@ -2,7 +2,7 @@ import '@once-ui-system/core/css/styles.css';
 import '@once-ui-system/core/css/tokens.css';
 import '@/resources/custom.css';
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Analytics from "@vercel/analytics";
+import { Analytics } from '@vercel/analytics/next';
 import classNames from "classnames";
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
@@ -17,6 +17,24 @@ export async function generateMetadata() {
     path: home.path,
     image: home.image,
   });
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <title>Next.js</title>
+      </head>
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
 }
 
 export default async function RootLayout({
