@@ -8,7 +8,7 @@ import Image from "next/image";
   </section>
   <section style={{ scrollSnapAlign: "start", height: "100vh", padding: "48px" }}>
     <Heading variant="heading-default-l">💡 The Solution</Heading>
-    <image src="/images/optigrade-dashboard.png" width="100%" />
+    <image src="/images/optigrade-dashboard.png" alt="Optigrade dashboard" width="100%" />
   </section>
   <section style={{ scrollSnapAlign: "start", height: "100vh", padding: "48px" }}>
     <Heading variant="heading-default-l">📈 The Outcome</Heading>
