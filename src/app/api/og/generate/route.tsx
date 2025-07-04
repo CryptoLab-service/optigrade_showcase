@@ -1,13 +1,13 @@
-import { ImageResponse } from "next/og";
-import { baseURL, person } from "@/resources";
+import { ImageResponse } from 'next/og';
+import { baseURL, person } from '@/resources';
 
-export const runtime = "nodejs";
+export const runtime = 'nodejs';
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
-  const title = url.searchParams.get("title") || "Portfolio";
-  const tag = url.searchParams.get("tag") || "Case Study";
-  const emoji = url.searchParams.get("emoji") || "🚀";
+  const title = url.searchParams.get('title') || 'Portfolio';
+  const tag = url.searchParams.get('tag') || 'Case Study';
+  const emoji = url.searchParams.get('emoji') || '🚀';
 
   async function loadGoogleFont(font: string) {
     const fontUrl = `https://fonts.googleapis.com/css2?family=${font}`;
@@ -19,7 +19,7 @@ export async function GET(request: Request) {
       if (res.ok) return await res.arrayBuffer();
     }
 
-    throw new Error("Failed to load font");
+    throw new Error('Failed to load font');
   }
 
   return new ImageResponse(
@@ -28,24 +28,24 @@ export async function GET(request: Request) {
         style={{
           width: 1280,
           height: 720,
-          background: "linear-gradient(to right, #0f0f0f, #1a1a1a)",
-          color: "white",
-          fontFamily: "Geist, Arial, sans-serif",
-          display: "flex",
-          flexDirection: "column",
+          background: 'linear-gradient(to right, #0f0f0f, #1a1a1a)',
+          color: 'white',
+          fontFamily: 'Geist, Arial, sans-serif',
+          display: 'flex',
+          flexDirection: 'column',
           padding: 80,
-          position: "relative",
+          position: 'relative',
         }}
       >
         {/* Tag Overlay */}
         <div
           style={{
-            position: "absolute",
+            position: 'absolute',
             top: 40,
             right: 40,
-            backgroundColor: "#ff004c",
-            color: "white",
-            padding: "12px 24px",
+            backgroundColor: '#ff004c',
+            color: 'white',
+            padding: '12px 24px',
             borderRadius: 999,
             fontSize: 28,
             fontWeight: 600,
@@ -69,8 +69,8 @@ export async function GET(request: Request) {
         {/* Avatar and Info */}
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
+            display: 'flex',
+            alignItems: 'center',
             gap: 64,
           }}
         >
@@ -81,15 +81,15 @@ export async function GET(request: Request) {
             style={{
               width: 192,
               height: 192,
-              objectFit: "cover",
-              borderRadius: "50%",
-              border: "5px solid white",
+              objectFit: 'cover',
+              borderRadius: '50%',
+              border: '5px solid white',
             }}
           />
           <div
             style={{
-              display: "flex",
-              flexDirection: "column",
+              display: 'flex',
+              flexDirection: 'column',
               gap: 16,
             }}
           >
@@ -105,10 +105,10 @@ export async function GET(request: Request) {
               style={{
                 fontSize: 36,
                 opacity: 0.7,
-                backgroundColor: "#262626",
-                padding: "8px 16px",
+                backgroundColor: '#262626',
+                padding: '8px 16px',
                 borderRadius: 8,
-                display: "inline-block",
+                display: 'inline-block',
               }}
             >
               {person.role}
@@ -122,9 +122,9 @@ export async function GET(request: Request) {
       height: 720,
       fonts: [
         {
-          name: "Geist",
-          data: await loadGoogleFont("Geist:wght@400"),
-          style: "normal",
+          name: 'Geist',
+          data: await loadGoogleFont('Geist:wght@400'),
+          style: 'normal',
         },
       ],
     }
