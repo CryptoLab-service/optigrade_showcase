@@ -1,3 +1,5 @@
+import { Heading, Text } from "@once-ui-system/core";
+
 <div style={{ scrollSnapType: "y mandatory", overflowY: "scroll", height: "100vh" }}>
   <section style={{ scrollSnapAlign: "start", height: "100vh", padding: "48px" }}>
     <Heading variant="heading-default-l">🎓 The Challenge</Heading>
