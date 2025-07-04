@@ -1,7 +1,7 @@
 import { home } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://https://zoetechhub.name.ng";
+const baseURL = "https://zoetechhub.name.ng"; // Fixed typo
 
 const routes = {
   "/": true,
@@ -128,7 +128,7 @@ const effects = {
 };
 
 const mailchimp = {
-  action: "https://url/subscribe/post?parameters",
+  action: "https://your-mailchimp-endpoint/subscribe/post?parameters", // Replace with actual Mailchimp URL
   effects: {
     mask: {
       cursor: true,
