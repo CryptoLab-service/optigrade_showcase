@@ -90,12 +90,12 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Toluwalope John is an UI/UX and graphics designer, entry-level data-scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel both intuitive and impactful. He’s currently channeling that energy into Optigrade—a platform he’s developing to rethink and enhance academic performace in Nigerian higher Institutions.
+        Toluwalope John is a UI/UX and graphics designer, entry-level data scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel intuitive and impactful. He’s currently channeling that energy into Optigrade—a platform he’s developing to rethink and enhance academic performance in Nigerian higher institutions.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
@@ -104,7 +104,7 @@ const about = {
         role: "Founder",
         achievements: [
           <>
-            Redesigned UI/UX and graphcs for key platforms under Zoe Tech Hub—my design and innovation hub—resulting in a 35%+ boost in user engagement and approximately 40% faster load times.
+            Redesigned UI/UX and graphics for key platforms under Zoe Tech Hub—my design and innovation hub—resulting in a 35%+ boost in user engagement and approximately 40% faster load times.
           </>,
           <>
             Led multiple graphics design projects, digital literacy campaigns, and office productivity initiatives, enhancing client impact and improving overall user experience.
@@ -117,7 +117,6 @@ const about = {
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
             alt: "Once UI Project",
@@ -129,17 +128,16 @@ const about = {
       {
         company: "CM Project House",
         timeframe: "2024 - 2025",
-        role: "Research Analysit and Designer",
+        role: "Research Analyst and Designer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 25%.
+            Developed a design system that unified the brand across multiple platforms, improving design consistency by 25%.
           </>,
           <>
-            Led design and graphics efforts in collaboration with cross-functional teams to launch a new academic product line, which contributed to a 15% increase in company revenue and improved student engagement.
+            Collaborated with cross-functional teams to launch a new academic product line, contributing to a 15% increase in company revenue and improved student engagement.
           </>,
           <>
-            Produced visually compelling digital and print publications at Zoe Tech Hub, combining effective layout design with strategic branding to support digital literacy campaigns and elevate the firm’s creative impact.
+            Produced visually compelling digital and print publications for Zoe Tech Hub, combining effective layout design with strategic branding to elevate creative impact.
           </>,
         ],
         images: [],
@@ -147,7 +145,7 @@ const about = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Studies",
     institutions: [
       {
@@ -161,49 +159,46 @@ const about = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Technical Skills",
     skills: [
       {
         title: "Figma",
-        description: <>Designing next-gen user interfaces with Figma—leveraging its powerful prototyping, design systems, and collaboration features to craft intuitive, scalable digital experiences.</>,
-        // optional: leave the array empty if you don't want to display images
+        description: <>Crafting modern user interfaces with Figma—using its design systems and prototyping features to build scalable, collaborative experiences.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
+            alt: "Figma UI Design",
             width: 16,
             height: 9,
           },
           {
             src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
+            alt: "Figma components",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Google Studio",
-        description: <>Creating insightful visual narratives using Google Looker Studio—transforming raw data into interactive dashboards and compelling reports that support smarter decision-making and user-focused digital strategies.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "Google Looker Studio",
+        description: <>Transforming raw data into interactive dashboards with Looker Studio—supporting smarter decisions through clear visuals and insights.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            alt: "Data Dashboard",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Notion Studio",
-        description: <>Designing and organizing knowledge systems with Notion—building structured workspaces, interactive docs, and dynamic content hubs that enhance collaboration and user experience across teams and personal projects.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "Notion",
+        description: <>Organizing ideas and teams with Notion—creating structured knowledge bases and design systems that support agile collaboration.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            alt: "Notion workspace",
             width: 16,
             height: 9,
           },
@@ -211,20 +206,20 @@ const about = {
       },
       {
         title: "Jupyter Notebook",
-        description: <>Analyzing data and visualizing insights with Jupyter Notebook—leveraging Python-powered notebooks to explore datasets, build prototypes, and communicate findings through clear, interactive reports.</>,
-        // optional: leave the array empty if you don't want to display images
+        description: <>Exploring data and building prototypes with Python-powered notebooks—visualizing insights to support design and development decisions.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            alt: "Jupyter visualization",
             width: 16,
             height: 9,
           },
         ],
       },
-   ],
+    ],
+  },
   certification: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Certifications",
     institutions: [
       {
@@ -246,9 +241,10 @@ const about = {
       {
         name: "LinkedIn Learning",
         description: <>Completed courses on Design Thinking, Figma Essentials, and Creative Productivity.</>,
-      }
-    ]
+      },
+    ],
   },
+};
 
 const blog = {
   path: "/blog",
