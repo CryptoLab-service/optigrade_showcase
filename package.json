@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@next/mdx": "^16.0.0",
+    "next-mdx-remote": "^4.4.1",
     "@once-ui-system/core": "^1.3.10",
     "next": "15.3.4",
     "react": "19.0.0",
@@ -19,7 +21,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "typescript": "^5.5.4"
-  },
+},
   "engines": {
     "node": "22.x"
   }
