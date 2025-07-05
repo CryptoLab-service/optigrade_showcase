@@ -1,4 +1,4 @@
-// src/resources/content.ts
+import React from 'react'; // Added import
 import { SkillsGrid } from '@/components/about/SkillsGrid';
 
 interface Person {
@@ -195,7 +195,7 @@ export const home: Home = {
   },
   subline: (
     <>
-      I'm Toluwalope John, a designer and founder of <strong style={{ fontSize: "1.1em", fontWeight: 700, color: "#ffffff"}} > Zoe Tech Hub </strong>, where I craft intuitive and purposeful user interfaces and experiences.<br/>
+      I'm Toluwalope John, a designer and founder of <strong style={{ fontSize: "1.1em", fontWeight: 700, color: "#ffffff" }} > Zoe Tech Hub </strong>, where I craft intuitive and purposeful user interfaces and experiences.<br />
       Through ongoing exploration, I prototype new ideas and build my own projects and tools—like Optigrade, a tool built to simplify and streamline educational workflows for smarter academic performance.
     </>
   ),
