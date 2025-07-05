@@ -149,7 +149,7 @@ export const person: Person = {
 
 export const newsletter: Newsletter = {
   display: true,
-  title: <React.Fragment>Subscribe to {person.firstName}&apos;s Newsletter</React.Fragment>,
+  title: <React.Fragment>Subscribe to {person.firstName + "\'s"} Newsletter</React.Fragment>,
   description: (
     <React.Fragment>
       I occasionally write about design, technology, and share thoughts on the intersection of
@@ -185,7 +185,7 @@ export const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
+  title: `${person.name + "\'s"} Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <React.Fragment>Building bridges between design, code, and user experiences</React.Fragment>,
   featured: {
@@ -222,7 +222,7 @@ export const about: About = {
     title: "Introduction",
     description: (
       <React.Fragment>
-        Toluwalope John is a UI/UX and graphics designer, entry-level data scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel intuitive and impactful. He’s currently channeling that energy into Optigrade—a platform he’s developing to rethink and enhance academic performance in Nigerian higher institutions.
+        Toluwalope John is a UI/UX and graphics designer, entry-level data scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel intuitive and impactful. He&apos;s currently channeling that energy into Optigrade—a platform he&apos;s developing to rethink and enhance academic performance in Nigerian higher institutions.
       </React.Fragment>
     ),
   },
