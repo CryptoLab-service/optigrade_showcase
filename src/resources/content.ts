@@ -1,5 +1,6 @@
 import React from 'react';
 import { SkillsGrid } from '@/components/about/SkillsGrid';
+import { Person } from './types';
 
 interface Person {
   firstName: string;
