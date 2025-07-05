@@ -12,17 +12,15 @@
     "next-mdx-remote": "^4.4.1",
     "@once-ui-system/core": "^1.3.10",
     "next": "15.3.4",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "react-icons": "^5.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.0",
+    "@motionone/react": "^11.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "typescript": "^5.5.4"
-},
-  "engines": {
-    "node": "22.x"
   }
 }
