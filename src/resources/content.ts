@@ -1,4 +1,4 @@
-import React from 'react'; // Added import
+import React from 'react'; // Added import to it
 import { SkillsGrid } from '@/components/about/SkillsGrid';
 
 interface Person {
