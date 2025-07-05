@@ -26,6 +26,11 @@
     "react-icons": "^5.5.0",
     "react-masonry-css": "^1.0.16",
     "sass": "^1.86.3"
+    "rimraf": "^4.0.0",
+    "glob": "^9.0.0",
+    "eslint": "^9.0.0",
+    "@eslint/object-schema": "^2.1.4",
+    "@eslint/config-array": "^0.18.0"
   },
   "devDependencies": {
     "@types/cookie": "^0.6.0",
