@@ -1,4 +1,5 @@
-import { Logo } from "@once-ui-system/core";
+import { RevealFx, Flex, Heading } from "@once-ui-system/core";
+import Image from "next/image";
 
 const person = {
   firstName: "Tolulope",
@@ -9,13 +10,13 @@ const person = {
   role: "Designer | Analyst | Creative technologist",
   avatar: "/images/avatar.jpg",
   email: "oluwalowojohn@gmail.com",
-  location: "Africa/Lagos", // ✅ Valid IANA timezone for Nigeria
-  languages: ["English", "Yoruba", "Hausa"], // optional: Leave the array empty if you don't want to display languages
+  location: "Africa/Lagos",
+  languages: ["English", "Yoruba", "Hausa"],
 };
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
+  title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
       I occasionally write about design, technology, and share thoughts on the intersection of
@@ -25,8 +26,6 @@ const newsletter = {
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
@@ -39,7 +38,7 @@ const social = [
   },
   {
     name: "Twitter",
-    icon: "twitter",
+    icon: ";twitter",
     link: "https://www.x.com/EncryptedMFI",
   },
   {
@@ -62,11 +61,11 @@ const home = {
     href: "/work/optigrade-academic-intelligence",
   },
   subline: (
-  <>
-    I&apos;m Toluwalope John, a designer and founder of <strong style={{ fontSize: "1.1em", fontWeight: 700, color: "#ffffff"}} > Zoe Tech Hub </strong>, where I craft intuitive and purposeful user interfaces and experiences.<br/>
-    Through ongoing exploration, I prototype new ideas and build my own projects and tools—like Optigrade, a tool built to simplify and streamline educational workflows for smarter academic performance.
-  </>
-),
+    <>
+      I'm Toluwalope John, a designer and founder of <strong style={{ fontSize: "1.1em", fontWeight: 700, color: "#ffffff" }} > Zoe Tech Hub </strong>, where I craft intuitive and purposeful user interfaces and experiences.<br />
+      Through ongoing exploration, I prototype new ideas and build my own projects and tools—like Optigrade, a tool built to simplify and streamline educational workflows for smarter academic performance.
+    </>
+  ),
 };
 
 const about = {
@@ -246,49 +245,51 @@ const about = {
   },
 };
 
-      {/* 🧰 Skills & Tools */}
-      <RevealFx translateY="16" delay={0.5}>
-        <Flex horizontal="center" wrap gap="24" paddingY="32">
-          <Image src="/logos/figma.png" alt="Figma" width={40} height={40} style={{ objectFit: "contain" }} />
-          <Image src="/logos/notion.png" alt="Notion" width={40} height={40} style={{ objectFit: "contain" }} />
-          <Image src="/logos/photoshop.png" alt="Photoshop" width={40} height={40} style={{ objectFit: "contain" }} />
-          <Image src="/logos/xd.png" alt="Adobe XD" width={40} height={40} style={{ objectFit: "contain" }} />
-          <Image src="/logos/microsoft.png" alt="Microsoft" width={40} height={40} style={{ objectFit: "contain" }} />
-          <Image src="/logos/cisco.png" alt="Cisco" width={40} height={40} style={{ objectFit: "contain" }} />
-        </Flex>
-      </RevealFx>
+// Skills & Tools
+export const skills = (
+  <RevealFx translateY="16" delay={0.5}>
+    <Flex horizontal="center" wrap gap="24" paddingY="32">
+      <Image src="/logos/figma.png" alt="Figma" width={40} height={40} style={{ objectFit: "contain" }} />
+      <Image src="/logos/notion.png" alt="Notion" width={40} height={40} style={{ objectFit: "contain" }} />
+      <Image src="/logos/photoshop.png" alt="Photoshop" width={40} height={40} style={{ objectFit: "contain" }} />
+      <Image src="/logos/xd.png" alt="Adobe XD" width={40} height={40} style={{ objectFit: "contain" }} />
+      <Image src="/logos/microsoft.png" alt="Microsoft" width={40} height={40} style={{ objectFit: "contain" }} />
+      <Image src="/logos/cisco.png" alt="Cisco" width={40} height={40} style={{ objectFit: "contain" }} />
+    </Flex>
+  </RevealFx>
+);
 
-      {/* 📄 Embedded Google CV */}
-      <RevealFx translateY="24" delay={1}>
-        <Heading variant="display-strong-xs" paddingBottom="16">
-          View My CV
-        </Heading>
-        <iframe
-          src="https://drive.google.com/file/d/15hR0lR5yNWEsGFyNOXnYyXdHXkPqohND/view?usp=sharing"
-          width="100%"
-          height="640"
-          style={{
-            backdropFilter: "blur(16px)",
-            width: "auto",
-            maxWidth: "100%",
-            minWidth: "fit-content",
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "12px",
-          }}
-          allow="autoplay"
-        ></iframe>
-      </RevealFx>
+// Embedded Google CV
+export const cvEmbed = (
+  <RevealFx translateY="24" delay={1}>
+    <Heading variant="display-strong-xs" paddingBottom="16">
+      View My CV
+    </Heading>
+    <iframe
+      src="https://drive.google.com/file/d/15hR0lR5yNWEsGFyNOXnYyXdHXkPqohND/view?usp=sharing"
+      width="100%"
+      height="640"
+      style={{
+        backdropFilter: "blur(16px)",
+        width: "auto",
+        maxWidth: "100%",
+        minWidth: "fit-content",
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "12px",
+      }}
+      allow="autoplay"
+    ></iframe>
+  </RevealFx>
+);
 
 const blog = {
   path: "/blog",
   label: "Blog",
   title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work = {
@@ -296,8 +297,6 @@ const work = {
   label: "Work",
   title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
 };
 
 const gallery = {
@@ -305,8 +304,6 @@ const gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
@@ -351,4 +348,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, skills, cvEmbed };
