@@ -1,14 +1,81 @@
+/* CSS Grid Masonry Layout */
 .masonryGrid {
-    display: flex;
-    margin-left: calc(-1 * var(--static-space-16));
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: 10px; /* Base row height - will be overridden */
+  padding: 1rem;
 }
 
-.masonryGridColumn {
-    padding-left: var(--static-space-16);
-    background-clip: padding-box;
-}
-
+/* Grid items will span multiple rows based on aspect ratio */
 .gridItem {
-    margin-bottom: var(--static-space-16);
+  break-inside: avoid;
+  margin-bottom: 0; /* Gap is now handled by grid-gap */
+  
+  /* Vertical images (3:4) - taller */
+  &[data-orientation="vertical"] {
+    grid-row-end: span 45; /* Adjust this value based on your desired spacing */
+  }
+
+  /* Horizontal images (16:9) - wider */
+  &[data-orientation="horizontal"] {
+    grid-column: span 2;
+    grid-row-end: span 24; /* Adjust this value based on your desired spacing */
+  }
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 720px) {
+  .masonryGrid {
+    grid-template-columns: 1fr;
+    
+    .gridItem {
+      /* Reset horizontal items to single column on mobile */
+      &[data-orientation="horizontal"] {
+        grid-column: span 1;
+        grid-row-end: span 45; /* Same as vertical on mobile */
+      }
+    }
+  }
+}
+
+/* Maintain your existing gallery styles */
+.gallery {
+  &Header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &Title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &Description {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* Image hover effects (if you had any) */
+.gridItem {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    z-index: 1;
+  }
+}
+
+/* Maintain any existing Media component styles */
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-m);
+}
+.cssGrid {
+  grid-auto-flow: dense;
+  align-items: start;
 }
