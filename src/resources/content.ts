@@ -143,7 +143,7 @@ export const person: Person = {
   role: "Designer | Analyst | Creative technologist",
   avatar: "/images/avatar.jpg",
   email: "oluwalowojohn@gmail.com",
-  location: "Africa/Lagos",
+  location: "Abuja/Nigeria",
   languages: ["English", "Yoruba", "Hausa"],
 };
 
@@ -187,16 +187,17 @@ export const home: Home = {
   label: "Home",
   title: `${person.name + "\'s"} Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <React.Fragment>Building bridges between design, code, and user experiences</React.Fragment>,
+  headline: <React.Fragment>Building thoughtful products & solutions where design, intelligence, and impact ignite</React.Fragment>,
   featured: {
     display: true,
-    title: <React.Fragment>Recent project: <strong className="ml-4">OptiGrade Mobile App</strong></React.Fragment>,
+    title: <React.Fragment>My Ongoing Project: <strong className="ml-4">OPTIGRADE</strong></React.Fragment>,
     href: "/work/optigrade-academic-intelligence",
   },
   subline: (
     <React.Fragment>
-      I&apos;m Toluwalope John, a designer and founder of <strong style={{ fontSize: "1.1em", fontWeight: 700, color: "#ffffff" }} > Zoe Tech Hub </strong>, where I craft intuitive and purposeful user interfaces and experiences.<br />
-      Through ongoing exploration, I prototype new ideas and build my own projects and tools—like Optigrade, a tool built to simplify and streamline educational workflows for smarter academic performance.
+      I&apos;m Toluwalope John — designer, creative technologist, and founder of <strong style={{ fontSize: "1.1em", fontWeight: 500, color: "#ffffff" }} > Zoe 
+    Tech Hub </strong>. I prototype ideas into purposeful digital tools across education and health, like Optigrade for academic analytics, 
+      TasxBox for simplified daily task workflows, and NoteHub for collaborative documentation. I believe in intuitive design and agile engineering for real-world change.
     </React.Fragment>
   ),
 };
