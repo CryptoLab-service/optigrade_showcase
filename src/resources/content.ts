@@ -1,4 +1,4 @@
-import React from 'react'; // Added import to it
+import React from 'react';
 import { SkillsGrid } from '@/components/about/SkillsGrid';
 
 interface Person {
@@ -149,12 +149,12 @@ export const person: Person = {
 
 export const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <React.Fragment>Subscribe to {person.firstName}&apos;s Newsletter</React.Fragment>,
   description: (
-    <>
+    <React.Fragment>
       I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity, user experience and engineering.
-    </>
+      creativity, user experience, and engineering.
+    </React.Fragment>
   ),
 };
 
@@ -187,17 +187,17 @@ export const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design, code and user experiences</>,
+  headline: <React.Fragment>Building bridges between design, code, and user experiences</React.Fragment>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">OptiGrade Mobile App</strong></>,
+    title: <React.Fragment>Recent project: <strong className="ml-4">OptiGrade Mobile App</strong></React.Fragment>,
     href: "/work/optigrade-academic-intelligence",
   },
   subline: (
-    <>
-      I'm Toluwalope John, a designer and founder of <strong style={{ fontSize: "1.1em", fontWeight: 700, color: "#ffffff" }} > Zoe Tech Hub </strong>, where I craft intuitive and purposeful user interfaces and experiences.<br />
+    <React.Fragment>
+      I&apos;m Toluwalope John, a designer and founder of <strong style={{ fontSize: "1.1em", fontWeight: 700, color: "#ffffff" }} > Zoe Tech Hub </strong>, where I craft intuitive and purposeful user interfaces and experiences.<br />
       Through ongoing exploration, I prototype new ideas and build my own projects and tools—like Optigrade, a tool built to simplify and streamline educational workflows for smarter academic performance.
-    </>
+    </React.Fragment>
   ),
 };
 
@@ -221,9 +221,9 @@ export const about: About = {
     display: true,
     title: "Introduction",
     description: (
-      <>
+      <React.Fragment>
         Toluwalope John is a UI/UX and graphics designer, entry-level data scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel intuitive and impactful. He’s currently channeling that energy into Optigrade—a platform he’s developing to rethink and enhance academic performance in Nigerian higher institutions.
-      </>
+      </React.Fragment>
     ),
   },
   work: {
@@ -235,18 +235,18 @@ export const about: About = {
         timeframe: "2017 - Present",
         role: "Founder",
         achievements: [
-          <>
+          <React.Fragment key="zoe-1">
             Redesigned UI/UX and graphics for key platforms under Zoe Tech Hub—my design and innovation hub—resulting in a 35%+ boost in user engagement and approximately 40% faster load times.
-          </>,
-          <>
+          </React.Fragment>,
+          <React.Fragment key="zoe-2">
             Led multiple graphics design projects, digital literacy campaigns, and office productivity initiatives, enhancing client impact and improving overall user experience.
-          </>,
-          <>
+          </React.Fragment>,
+          <React.Fragment key="zoe-3">
             Conducted extensive user research and usability analysis to guide UI/UX and product design decisions.
-          </>,
-          <>
+          </React.Fragment>,
+          <React.Fragment key="zoe-4">
             Integrated AI-powered tools into the design workflow, enabling faster iteration cycles and more data-driven, user-centered solutions.
-          </>,
+          </React.Fragment>,
         ],
         images: [
           {
@@ -262,15 +262,15 @@ export const about: About = {
         timeframe: "2024 - 2025",
         role: "Research Analyst and Designer",
         achievements: [
-          <>
+          <React.Fragment key="cm-1">
             Developed a design system that unified the brand across multiple platforms, improving design consistency by 25%.
-          </>,
-          <>
+          </React.Fragment>,
+          <React.Fragment key="cm-2">
             Collaborated with cross-functional teams to launch a new academic product line, contributing to a 15% increase in company revenue and improved student engagement.
-          </>,
-          <>
+          </React.Fragment>,
+          <React.Fragment key="cm-3">
             Produced visually compelling digital and print publications for Zoe Tech Hub, combining effective layout design with strategic branding to elevate creative impact.
-          </>,
+          </React.Fragment>,
         ],
         images: [],
       },
@@ -282,11 +282,11 @@ export const about: About = {
     institutions: [
       {
         name: "Ekiti State University, Ado-Ekiti",
-        description: <>Studied Physics.</>,
+        description: <React.Fragment>Studied Physics.</React.Fragment>,
       },
       {
         name: "The 3 Million Technical Talent",
-        description: <>Studied User Interface and User Experience Design.</>,
+        description: <React.Fragment>Studied User Interface and User Experience Design.</React.Fragment>,
       },
     ],
   },
@@ -296,7 +296,7 @@ export const about: About = {
     skills: [
       {
         title: "Figma",
-        description: <>Crafting modern user interfaces with Figma—using its design systems and prototyping features to build scalable, collaborative experiences.</>,
+        description: <React.Fragment>Crafting modern user interfaces with Figma—using its design systems and prototyping features to build scalable, collaborative experiences.</React.Fragment>,
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
@@ -314,7 +314,7 @@ export const about: About = {
       },
       {
         title: "Google Looker Studio",
-        description: <>Transforming raw data into interactive dashboards with Looker Studio—supporting smarter decisions through clear visuals and insights.</>,
+        description: <React.Fragment>Transforming raw data into interactive dashboards with Looker Studio—supporting smarter decisions through clear visuals and insights.</React.Fragment>,
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
@@ -326,7 +326,7 @@ export const about: About = {
       },
       {
         title: "Notion",
-        description: <>Organizing ideas and teams with Notion—creating structured knowledge bases and design systems that support agile collaboration.</>,
+        description: <React.Fragment>Organizing ideas and teams with Notion—creating structured knowledge bases and design systems that support agile collaboration.</React.Fragment>,
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
@@ -338,7 +338,7 @@ export const about: About = {
       },
       {
         title: "Jupyter Notebook",
-        description: <>Exploring data and building prototypes with Python-powered notebooks—visualizing insights to support design and development decisions.</>,
+        description: <React.Fragment>Exploring data and building prototypes with Python-powered notebooks—visualizing insights to support design and development decisions.</React.Fragment>,
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
@@ -356,23 +356,23 @@ export const about: About = {
     awards: [
       {
         name: "ALX Africa",
-        description: <>Completed Frontend Engineering Training under The Room Fellowship.</>,
+        description: <React.Fragment>Completed Frontend Engineering Training under The Room Fellowship.</React.Fragment>,
       },
       {
         name: "Access Bank Youthrive Internship",
-        description: <>Certified in UI/UX Design with career acceleration support.</>,
+        description: <React.Fragment>Certified in UI/UX Design with career acceleration support.</React.Fragment>,
       },
       {
         name: "3MTT Nigeria",
-        description: <>Certified in User Interface and User Experience Design as part of the Federal Training Initiative.</>,
+        description: <React.Fragment>Certified in User Interface and User Experience Design as part of the Federal Training Initiative.</React.Fragment>,
       },
       {
         name: "Cisco Networking Academy",
-        description: <>Completed Introduction to Cybersecurity and Networking Basics.</>,
+        description: <React.Fragment>Completed Introduction to Cybersecurity and Networking Basics.</React.Fragment>,
       },
       {
         name: "LinkedIn Learning",
-        description: <>Completed courses on Design Thinking, Figma Essentials, and Creative Productivity.</>,
+        description: <React.Fragment>Completed courses on Design Thinking, Figma Essentials, and Creative Productivity.</React.Fragment>,
       },
     ],
   },
