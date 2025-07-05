@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { baseURL, person } from '@/resources';
+import Image from 'next/image'; // Change <img> to <Image> with proper width/height
 
 export const runtime = 'nodejs';
 
