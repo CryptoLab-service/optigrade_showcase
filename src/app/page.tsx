@@ -1,17 +1,15 @@
 import React from 'react';
 import {
   Heading, Flex, Text, Button, Avatar, RevealFx, Column,
-  Badge, Row, Schema, Line
+  Badge, Row, Schema
 } from '@once-ui-system/core';
-import { home, about, person, newsletter, baseURL, routes } from '@/resources';
+import { home, about, person, newsletter, baseURL, routes, skills } from '@/resources';
 import { Mailchimp } from '@/components';
 import { Projects } from '@/components/work/Projects';
 import { Posts } from '@/components/blog/Posts';
 import { AboutCard } from '@/components/about/AboutCard';
-import { SkillsGrid } from '@/components/about/SkillsGrid';
 import { Certifications } from '@/components/about/Certifications';
 import { Contact } from '@/components/Contact';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -87,7 +85,7 @@ export default function Home() {
 
       {/* 🧰 Skills & Tools */}
       <RevealFx translateY="16" delay={0.5}>
-        <SkillsGrid />
+        {skills}
       </RevealFx>
 
       {/* 🖼️ Featured Projects */}
@@ -120,7 +118,7 @@ export default function Home() {
           View My CV
         </Heading>
         <iframe
-          src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
+          src="https://drive.google.com/file/d/15hR0lR5yNWEsGFyNOXnYyXdHXkPqohND/preview"
           width="100%"
           height="640"
           style={{
@@ -143,7 +141,7 @@ export default function Home() {
 
       {/* 🪙 Footer */}
       <Flex horizontal="center" vertical="center" padding="32" textVariant="display-default-xs">
-        © {new Date().getFullYear()} Oluwalowo John Profolio
+        © {new Date().getFullYear()} Tolulope John Portfolio
       </Flex>
     </Column>
   );
