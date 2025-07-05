@@ -139,10 +139,10 @@ export default function Home() {
       {/* 📬 Newsletter */}
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
 
-      {/* 🪙 Footer */}
+      {/* 🪙 Footer 
       <Flex horizontal="center" vertical="center" padding="32" textVariant="display-default-xs">
         © {new Date().getFullYear()} Tolulope John Portfolio
-      </Flex>
+      </Flex> */}
     </Column>
   );
 }
