@@ -251,7 +251,7 @@ export const about: About = {
         ],
         images: [
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/project-01/apps.jpg",
             alt: "Once UI Project",
             width: 16,
             height: 9,
@@ -300,13 +300,13 @@ export const about: About = {
         description: <React.Fragment>Crafting modern user interfaces with Figma—using its design systems and prototyping features to build scalable, collaborative experiences.</React.Fragment>,
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
+            src: "/logos/figma.png",
             alt: "Figma UI Design",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
+            src: "/logos/miro.png",
             alt: "Figma components",
             width: 16,
             height: 9,
