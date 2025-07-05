@@ -3,13 +3,13 @@ import {
   Heading, Flex, Text, Button, Avatar, RevealFx, Column,
   Badge, Row, Schema
 } from '@once-ui-system/core';
-import { home, about, person, newsletter, baseURL, routes, skills } from '@/resources';
+import { home, about, person, newsletter, baseURL, routes } from '@/resources';
+import { SkillsGrid } from '@/components/about/SkillsGrid';
 import { Mailchimp } from '@/components';
 import { Projects } from '@/components/work/Projects';
 import { Posts } from '@/components/blog/Posts';
 import { AboutCard } from '@/components/about/AboutCard';
 import { Certifications } from '@/components/about/Certifications';
-import { Contact } from '@/components/Contact';
 
 export default function Home() {
   return (
@@ -85,7 +85,7 @@ export default function Home() {
 
       {/* 🧰 Skills & Tools */}
       <RevealFx translateY="16" delay={0.5}>
-        {skills}
+        <SkillsGrid />
       </RevealFx>
 
       {/* 🖼️ Featured Projects */}
@@ -136,7 +136,7 @@ export default function Home() {
         ></iframe>
       </RevealFx>
 
-      {/* 📬 Newsletter or Contact */}
+      {/* 📬 Newsletter */}
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
 
       {/* 🪙 Footer */}
