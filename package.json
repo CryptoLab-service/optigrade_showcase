@@ -8,14 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@next/mdx": "^16.0.0",
-    "next-mdx-remote": "^4.4.1",
+    "@next/mdx": "^15.3.5",
+    "@motionone/react": "^10.16.4",
     "@once-ui-system/core": "^1.3.10",
     "next": "15.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.0.0",
-    "@motionone/react": "^11.0.0"
+    "react-icons": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
