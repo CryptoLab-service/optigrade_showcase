@@ -7,8 +7,6 @@ export const SkillsGrid = () => (
     <Image src="/logos/notion.png" alt="Notion" width={40} height={40} style={{ objectFit: 'contain' }} />
     <Image src="/logos/photoshop.png" alt="Photoshop" width={40} height={40} style={{ objectFit: 'contain' }} />
     <Image src="/logos/xd.png" alt="Adobe XD" width={40} height={40} style={{ objectFit: 'contain' }} />
-    <Image src="/logos/jupyter.png" alt="Jupyter" width={40} height={40} style={{ objectFit: 'contain' }} />
-    <Image src="/logos/looker.png" alt="Looker Studio" width={40} height={40} style={{ objectFit: 'contain' }} />
     <Image src="/logos/microsoft.png" alt="Microsoft" width={40} height={40} style={{ objectFit: 'contain' }} />
     <Image src="/logos/cisco.png" alt="Cisco" width={40} height={40} style={{ objectFit: 'contain' }} />
   </Flex>
