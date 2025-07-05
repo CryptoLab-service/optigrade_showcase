@@ -251,7 +251,7 @@ export const about: About = {
         ],
         images: [
           {
-            src: "/images/projects/project-01/apps.jpg",
+            src: "/tools/tools1.jpg",
             alt: "Once UI Project",
             width: 16,
             height: 9,
@@ -273,7 +273,14 @@ export const about: About = {
             Produced visually compelling digital and print publications for Zoe Tech Hub, combining effective layout design with strategic branding to elevate creative impact.
           </React.Fragment>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/tools/tools1.jpg",
+            alt: "Vercel website",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
@@ -300,13 +307,13 @@ export const about: About = {
         description: <React.Fragment>Crafting modern user interfaces with Figma—using its design systems and prototyping features to build scalable, collaborative experiences.</React.Fragment>,
         images: [
           {
-            src: "/logos/figma.png",
+            src: "/tools/tools1.jpg",
             alt: "Figma UI Design",
             width: 16,
             height: 9,
           },
           {
-            src: "/logos/miro.png",
+            src: "/tools/tools1.jpg",
             alt: "Figma components",
             width: 16,
             height: 9,
@@ -314,12 +321,12 @@ export const about: About = {
         ],
       },
       {
-        title: "Google Looker Studio",
-        description: <React.Fragment>Transforming raw data into interactive dashboards with Looker Studio—supporting smarter decisions through clear visuals and insights.</React.Fragment>,
+        title: "Adobe XD",
+        description: <React.Fragment>Transforming Designing seamless user interfaces with Adobe XD—leveraging its prototyping and collaboration tools to create intuitive, high-fidelity mockups that enhance user experiences.</React.Fragment>,
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Data Dashboard",
+            src: "/tools/tools1.jpg",
+            alt: "Adobe XD UI Mockup",
             width: 16,
             height: 9,
           },
@@ -330,7 +337,7 @@ export const about: About = {
         description: <React.Fragment>Organizing ideas and teams with Notion—creating structured knowledge bases and design systems that support agile collaboration.</React.Fragment>,
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
+            src: "/tools/tools1.jpg",
             alt: "Notion workspace",
             width: 16,
             height: 9,
@@ -342,7 +349,7 @@ export const about: About = {
         description: <React.Fragment>Exploring data and building prototypes with Python-powered notebooks—visualizing insights to support design and development decisions.</React.Fragment>,
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
+            src: "/tools/tools1.jpg",
             alt: "Jupyter visualization",
             width: 16,
             height: 9,
@@ -356,24 +363,28 @@ export const about: About = {
     title: "Certification",
     awards: [
       {
-        name: "ALX Africa",
-        description: <React.Fragment>Completed Frontend Engineering Training under The Room Fellowship.</React.Fragment>,
-      },
-      {
-        name: "Access Bank Youthrive Internship",
-        description: <React.Fragment>Certified in UI/UX Design with career acceleration support.</React.Fragment>,
-      },
-      {
         name: "3MTT Nigeria",
         description: <React.Fragment>Certified in User Interface and User Experience Design as part of the Federal Training Initiative.</React.Fragment>,
       },
       {
+        name: "ALX Africa",
+        description: <React.Fragment>Completed Artificial Intelligence Career Essentials, Professional Foundation and currently Frontend Engineering Training under The Room Fellowship.</React.Fragment>,
+      },
+      {
+        name: "Access Bank Youthrive Internship (CareerEx)",
+        description: <React.Fragment>Certified in Product Management with career acceleration support.</React.Fragment>,
+      },
+      {
         name: "Cisco Networking Academy",
-        description: <React.Fragment>Completed Introduction to Cybersecurity and Networking Basics.</React.Fragment>,
+        description: <React.Fragment>Completed Introduction to English for IT (1 and 2), Cybersecurity and Networking Basics.</React.Fragment>,
       },
       {
         name: "LinkedIn Learning",
         description: <React.Fragment>Completed courses on Design Thinking, Figma Essentials, and Creative Productivity.</React.Fragment>,
+      },
+      {
+        name: "GreatLearning Academy",
+        description: <React.Fragment>Certified in Design Thinking principle, UI/UX Design and Introduction to Design.</React.Fragment>,
       },
     ],
   },
