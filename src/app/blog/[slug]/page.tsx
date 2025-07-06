@@ -34,12 +34,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string | string[] }>;
+  params: { slug: string | string[] }; // Fixed: Removed Promise wrapper
 }): Promise<Metadata> {
-  const routeParams = await params;
-  const slugPath = Array.isArray(routeParams.slug) 
-    ? routeParams.slug.join('/') 
-    : routeParams.slug || '';
+  const slugPath = Array.isArray(params.slug) 
+    ? params.slug.join('/') 
+    : params.slug || '';
 
   const posts = getPosts(["src", "app", "blog", "posts"]);
   const post = posts.find((post) => post.slug === slugPath);
@@ -57,7 +56,9 @@ export async function generateMetadata({
 
 export default async function Blog({
   params
-}: { params: { slug: string | string[] } }) { // Fixed params type
+}: { 
+  params: { slug: string | string[] } // Fixed: Removed Promise wrapper
+}) {
   const slugPath = Array.isArray(params.slug) 
     ? params.slug.join('/') 
     : params.slug || '';
