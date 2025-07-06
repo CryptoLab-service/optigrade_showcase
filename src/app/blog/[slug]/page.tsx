@@ -34,7 +34,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string | string[] }; // Fixed: Removed Promise wrapper
+  params: { slug: string | string[] };
 }): Promise<Metadata> {
   const slugPath = Array.isArray(params.slug) 
     ? params.slug.join('/') 
@@ -54,11 +54,12 @@ export async function generateMetadata({
   });
 }
 
-export default async function Blog({
-  params
-}: { 
-  params: { slug: string | string[] } // Fixed: Removed Promise wrapper
-}) {
+// Define the correct type for Next.js page props
+type BlogPageProps = {
+  params: { slug: string | string[] };
+};
+
+export default async function Blog({ params }: BlogPageProps) {
   const slugPath = Array.isArray(params.slug) 
     ? params.slug.join('/') 
     : params.slug || '';
