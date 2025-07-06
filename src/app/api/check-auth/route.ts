@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { serialize } from "cookie"; // Import the specific function you need
 
 export async function GET(request: NextRequest) {
-  const cookieHeader = request.headers.get("cookie") || "";
-  const cookies = cookie.parse(cookieHeader);
+  // Get the authToken cookie directly from request cookies
+  const authToken = request.cookies.get('authToken')?.value;
 
-  if (cookies.authToken === "authenticated") {
+  if (authToken === "authenticated") {
     return NextResponse.json({ authenticated: true }, { status: 200 });
   } else {
     return NextResponse.json({ authenticated: false }, { status: 401 });
