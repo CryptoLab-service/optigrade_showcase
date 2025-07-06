@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import * as cookie from "cookie";
+import { serialize } from "cookie"; // Import the specific function you need
 
 export async function GET(request: NextRequest) {
   const cookieHeader = request.headers.get("cookie") || "";
