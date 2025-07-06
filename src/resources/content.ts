@@ -151,12 +151,7 @@ export const person: Person = {
 export const newsletter: Newsletter = {
   display: true,
   title: "Subscribe to get updates on design and technology trends",
-  description: (
-    <React.Fragment>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity, user experience, and engineering.
-    </React.Fragment>
-  ),
+  description: "I occasionally write about design, technology, and the intersection of creativity, UX, and engineering.",
 };
 
 export const social: Social[] = [
