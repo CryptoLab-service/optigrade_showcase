@@ -1,5 +1,3 @@
-import React from 'react';
-import { SkillsGrid } from '@/components/about/SkillsGrid';
 import { Person } from './types';
 
 interface Person {
@@ -21,8 +19,8 @@ interface Social {
 
 interface Newsletter {
   display: boolean;
-  title: JSX.Element;
-  description: JSX.Element;
+  title: string;
+  description: string;
 }
 
 interface Home {
@@ -31,13 +29,13 @@ interface Home {
   label: string;
   title: string;
   description: string;
-  headline: JSX.Element;
+  headline: string;
   featured: {
     display: boolean;
-    title: JSX.Element;
+    title: string;
     href: string;
   };
-  subline: JSX.Element;
+  subline: string;
 }
 
 interface About {
@@ -59,7 +57,7 @@ interface About {
   intro: {
     display: boolean;
     title: string;
-    description: JSX.Element;
+    description: string;
   };
   work: {
     display: boolean;
@@ -68,7 +66,7 @@ interface About {
       company: string;
       timeframe: string;
       role: string;
-      achievements: JSX.Element[];
+      achievements: string[];
       images: {
         src: string;
         alt: string;
@@ -82,7 +80,7 @@ interface About {
     title: string;
     institutions: {
       name: string;
-      description: JSX.Element;
+      description: string;
     }[];
   };
   technical: {
@@ -90,7 +88,7 @@ interface About {
     title: string;
     skills: {
       title: string;
-      description: JSX.Element;
+      description: string;
       images: {
         src: string;
         alt: string;
@@ -104,7 +102,7 @@ interface About {
     title: string;
     awards: {
       name: string;
-      description: JSX.Element;
+      description: string;
     }[];
   };
 }
@@ -181,21 +179,15 @@ export const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name + "\'s"} Portfolio`,
+  title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <React.Fragment>Building thoughtful products & solutions where design, intelligence, and impact ignite</React.Fragment>,
+  headline: "Building thoughtful products & solutions where design, intelligence, and impact ignite",
   featured: {
     display: true,
-    title: <React.Fragment>My Ongoing Project: <strong className="ml-4">OPTIGRADE</strong></React.Fragment>,
+    title: "My Ongoing Project: OPTIGRADE",
     href: "/work/optigrade-academic-intelligence",
   },
-  subline: (
-    <React.Fragment>
-      I&apos;m Toluwalope John — designer, creative technologist, and founder of <strong style={{ fontSize: "1.1em", fontWeight: 500, color: "#ffffff" }} > Zoe 
-    Tech Hub </strong>. I prototype ideas into purposeful digital tools across education and health, like Optigrade for academic analytics, 
-      TasxBox for simplified daily task workflows, and NoteHub for collaborative documentation. I believe in intuitive design and agile engineering for real-world change.
-    </React.Fragment>
-  ),
+  subline: "I'm Toluwalope John — designer, creative technologist, and founder of Zoe Tech Hub. I prototype ideas into purposeful digital tools across education and health, like Optigrade for academic analytics, TasxBox for simplified daily task workflows, and NoteHub for collaborative documentation. I believe in intuitive design and agile engineering for real-world change.",
 };
 
 export const about: About = {
@@ -217,11 +209,7 @@ export const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: (
-      <React.Fragment>
-        Toluwalope John is a UI/UX and graphics designer, entry-level data scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel intuitive and impactful. He&apos;s currently channeling that energy into Optigrade—a platform he&apos;s developing to rethink and enhance academic performance in Nigerian higher institutions.
-      </React.Fragment>
-    ),
+    description: "Toluwalope John is a UI/UX and graphics designer, entry-level data scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel intuitive and impactful. He's currently channeling that energy into Optigrade—a platform he's developing to rethink and enhance academic performance in Nigerian higher institutions.",
   },
   work: {
     display: true,
@@ -232,18 +220,10 @@ export const about: About = {
         timeframe: "2017 - Present",
         role: "Founder",
         achievements: [
-          <React.Fragment key="zoe-1">
-            Redesigned UI/UX and graphics for key platforms under Zoe Tech Hub—my design and innovation hub—resulting in a 35%+ boost in user engagement and approximately 40% faster load times.
-          </React.Fragment>,
-          <React.Fragment key="zoe-2">
-            Led multiple graphics design projects, digital literacy campaigns, and office productivity initiatives, enhancing client impact and improving overall user experience.
-          </React.Fragment>,
-          <React.Fragment key="zoe-3">
-            Conducted extensive user research and usability analysis to guide UI/UX and product design decisions.
-          </React.Fragment>,
-          <React.Fragment key="zoe-4">
-            Integrated AI-powered tools into the design workflow, enabling faster iteration cycles and more data-driven, user-centered solutions.
-          </React.Fragment>,
+          "Redesigned UI/UX and graphics for key platforms under Zoe Tech Hub—my design and innovation hub—resulting in a 35%+ boost in user engagement and approximately 40% faster load times.",
+          "Led multiple graphics design projects, digital literacy campaigns, and office productivity initiatives, enhancing client impact and improving overall user experience.",
+          "Conducted extensive user research and usability analysis to guide UI/UX and product design decisions.",
+          "Integrated AI-powered tools into the design workflow, enabling faster iteration cycles and more data-driven, user-centered solutions.",
         ],
         images: [
           {
@@ -259,15 +239,9 @@ export const about: About = {
         timeframe: "2024 - 2025",
         role: "Research Analyst and Designer",
         achievements: [
-          <React.Fragment key="cm-1">
-            Developed a design system that unified the brand across multiple platforms, improving design consistency by 25%.
-          </React.Fragment>,
-          <React.Fragment key="cm-2">
-            Collaborated with cross-functional teams to launch a new academic product line, contributing to a 15% increase in company revenue and improved student engagement.
-          </React.Fragment>,
-          <React.Fragment key="cm-3">
-            Produced visually compelling digital and print publications for Zoe Tech Hub, combining effective layout design with strategic branding to elevate creative impact.
-          </React.Fragment>,
+          "Developed a design system that unified the brand across multiple platforms, improving design consistency by 25%.",
+          "Collaborated with cross-functional teams to launch a new academic product line, contributing to a 15% increase in company revenue and improved student engagement.",
+          "Produced visually compelling digital and print publications for Zoe Tech Hub, combining effective layout design with strategic branding to elevate creative impact.",
         ],
         images: [
           {
@@ -286,11 +260,11 @@ export const about: About = {
     institutions: [
       {
         name: "Ekiti State University, Ado-Ekiti",
-        description: <React.Fragment>Studied Physics.</React.Fragment>,
+        description: "Studied Physics.",
       },
       {
         name: "The 3 Million Technical Talent",
-        description: <React.Fragment>Studied User Interface and User Experience Design.</React.Fragment>,
+        description: "Studied User Interface and User Experience Design.",
       },
     ],
   },
@@ -300,7 +274,7 @@ export const about: About = {
     skills: [
       {
         title: "Figma",
-        description: <React.Fragment>Crafting modern user interfaces with Figma—using its design systems and prototyping features to build scalable, collaborative experiences.</React.Fragment>,
+        description: "Crafting modern user interfaces with Figma—using its design systems and prototyping features to build scalable, collaborative experiences.",
         images: [
           {
             src: "/tools/tools1.jpg",
@@ -318,7 +292,7 @@ export const about: About = {
       },
       {
         title: "Adobe XD",
-        description: <React.Fragment>Transforming Designing seamless user interfaces with Adobe XD—leveraging its prototyping and collaboration tools to create intuitive, high-fidelity mockups that enhance user experiences.</React.Fragment>,
+        description: "Designing seamless user interfaces with Adobe XD—leveraging its prototyping and collaboration tools to create intuitive, high-fidelity mockups that enhance user experiences.",
         images: [
           {
             src: "/tools/tools1.jpg",
@@ -330,7 +304,7 @@ export const about: About = {
       },
       {
         title: "Notion",
-        description: <React.Fragment>Organizing ideas and teams with Notion—creating structured knowledge bases and design systems that support agile collaboration.</React.Fragment>,
+        description: "Organizing ideas and teams with Notion—creating structured knowledge bases and design systems that support agile collaboration.",
         images: [
           {
             src: "/tools/tools1.jpg",
@@ -342,7 +316,7 @@ export const about: About = {
       },
       {
         title: "Jupyter Notebook",
-        description: <React.Fragment>Exploring data and building prototypes with Python-powered notebooks—visualizing insights to support design and development decisions.</React.Fragment>,
+        description: "Exploring data and building prototypes with Python-powered notebooks—visualizing insights to support design and development decisions.",
         images: [
           {
             src: "/tools/tools1.jpg",
@@ -360,57 +334,31 @@ export const about: About = {
     awards: [
       {
         name: "3MTT Nigeria",
-        description: <React.Fragment>Certified in User Interface and User Experience Design as part of the Federal Training Initiative.</React.Fragment>,
+        description: "Certified in User Interface and User Experience Design as part of the Federal Training Initiative.",
       },
       {
         name: "ALX Africa",
-        description: <React.Fragment>Completed Artificial Intelligence Career Essentials, Professional Foundation and currently Frontend Engineering Training under The Room Fellowship.</React.Fragment>,
+        description: "Completed Artificial Intelligence Career Essentials, Professional Foundation and currently undergoing Frontend Engineering Training under The Room Fellowship.",
       },
       {
         name: "Access Bank Youthrive Internship (CareerEx)",
-        description: <React.Fragment>Certified in Product Management with career acceleration support.</React.Fragment>,
+        description: "Certified in Product Management with career acceleration support.",
       },
       {
         name: "Cisco Networking Academy",
-        description: <React.Fragment>Completed Introduction to English for IT (1 and 2), Cybersecurity and Networking Basics.</React.Fragment>,
+        description: "Completed Introduction to English for IT (1 and 2), Cybersecurity and Networking Basics.",
       },
       {
         name: "LinkedIn Learning",
-        description: <React.Fragment>Completed courses on Design Thinking, Figma Essentials, and Creative Productivity.</React.Fragment>,
+        description: "Completed courses on Design Thinking, Figma Essentials, and Creative Productivity.",
       },
       {
         name: "GreatLearning Academy",
-        description: <React.Fragment>Certified in Design Thinking principle, UI/UX Design and Introduction to Design.</React.Fragment>,
+        description: "Certified in Design Thinking principles, UI/UX Design, and Introduction to Design.",
       },
     ],
   },
 };
-
-      {/* 📄 Embedded Google CV */}
-      <RevealFx translateY="24" delay={1}>
-        <Heading variant="display-strong-xs" paddingBottom="16">
-          View My CV
-        </Heading>
-        <iframe
-          src="https://drive.google.com/file/d/15hR0lR5yNWEsGFyNOXnYyXdHXkPqohND/preview"
-          width="100%"
-          height="640"
-          style={{
-            backdropFilter: 'blur(16px)',
-            width: 'auto',
-            maxWidth: '100%',
-            minWidth: 'fit-content',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '12px',
-          }}
-          allow="autoplay"
-        ></iframe>
-      </RevealFx>
-
-export const skills = <SkillsGrid />;
 
 export const blog: Blog = {
   path: "/blog",
@@ -475,4 +423,13 @@ export const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export {
+  person,
+  social,
+  newsletter,
+  home,
+  about,
+  blog,
+  work,
+  gallery,
+};
