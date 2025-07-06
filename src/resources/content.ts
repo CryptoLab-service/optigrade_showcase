@@ -422,14 +422,3 @@ export const gallery: Gallery = {
     },
   ],
 };
-
-export {
-  person,
-  social,
-  newsletter,
-  home,
-  about,
-  blog,
-  work,
-  gallery,
-};
