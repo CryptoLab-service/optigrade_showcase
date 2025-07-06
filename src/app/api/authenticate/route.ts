@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { serialize } from "cookie"; // Import the specific function you need
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
@@ -20,16 +19,14 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
     
-    response.headers.set(
-      "Set-Cookie",
-      serialize("authToken", "authenticated", {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        maxAge: 60 * 60,
-        sameSite: "strict",
-        path: "/",
-      })
-    );
+    // Use NextResponse's built-in cookie handling
+    response.cookies.set("authToken", "authenticated", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 60 * 60,
+      sameSite: "strict",
+      path: "/",
+    });
 
     return response;
   } else {
