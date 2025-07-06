@@ -36,5 +36,9 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "typescript": "^5.5.4"
+  },
+  "scripts": {
+  "lint": "eslint . --ext .ts,.tsx",
+  "build": "next build"
   }
 }
