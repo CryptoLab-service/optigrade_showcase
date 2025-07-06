@@ -60,6 +60,7 @@ export default function About() {
     },
   ];
 
+  // ✅ All visual output now stays inside this return block
   return (
     <Column maxWidth="m">
       <Schema
@@ -75,10 +76,7 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      {/* You’ll continue rendering sections like TableOfContents, Flex layout, and other components here */}
-    </Column>
-  );
-}
+
       {/* --- Table of Contents --- */}
       {about.tableOfContent.display && (
         <Column
@@ -93,6 +91,7 @@ export default function About() {
         </Column>
       )}
 
+      {/* --- Main Layout Container --- */}
       <Flex fillWidth mobileDirection="column" horizontal="center">
         {/* --- Avatar and Languages --- */}
         {about.avatar.display && (
@@ -122,7 +121,10 @@ export default function About() {
             )}
           </Column>
         )}
-
+      </Flex>
+    </Column>
+  );
+}
         {/* --- Main Content --- */}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           {/* --- Header Section --- */}
