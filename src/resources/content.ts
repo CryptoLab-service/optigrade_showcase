@@ -150,7 +150,7 @@ export const person: Person = {
 
 export const newsletter: Newsletter = {
   display: true,
-  title: `Subscribe to ${person.firstName}&apos;s Newsletter`,
+  title: "Subscribe to get updates on design and technology trends",
   description: (
     <React.Fragment>
       I occasionally write about design, technology, and share thoughts on the intersection of
