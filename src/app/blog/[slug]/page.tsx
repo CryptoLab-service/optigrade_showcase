@@ -5,7 +5,7 @@ import {
   CustomMDX, 
   ScrollToHash,
   LoadingSpinner,
-  ErrorFallback 
+  ErrorFallback
 } from "@/components";
 import { 
   Meta, 
