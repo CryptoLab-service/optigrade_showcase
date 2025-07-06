@@ -34,14 +34,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string | string[] };
+  params: { slug: string };
 }): Promise<Metadata> {
-  const slugPath = Array.isArray(params.slug) 
-    ? params.slug.join('/') 
-    : params.slug || '';
-
+  const slug = params.slug;
   const posts = getPosts(["src", "app", "blog", "posts"]);
-  const post = posts.find((post) => post.slug === slugPath);
+  const post = posts.find((post) => post.slug === slug);
 
   if (!post) return {};
 
@@ -54,18 +51,14 @@ export async function generateMetadata({
   });
 }
 
-// Define the correct type for Next.js page props
 type BlogPageProps = {
-  params: { slug: string | string[] };
+  params: { slug: string };
 };
 
 export default async function Blog({ params }: BlogPageProps) {
-  const slugPath = Array.isArray(params.slug) 
-    ? params.slug.join('/') 
-    : params.slug || '';
-
+  const slug = params.slug;
   const posts = getPosts(["src", "app", "blog", "posts"]);
-  const post = posts.find((post) => post.slug === slugPath);
+  const post = posts.find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
@@ -77,10 +70,8 @@ export default async function Blog({ params }: BlogPageProps) {
 
   return (
     <Row fillWidth>
-      {/* Left spacing */}
       <Row maxWidth={12} hide="m" />
       
-      {/* Main content */}
       <Row fillWidth horizontal="center">
         <Column as="section" maxWidth="xs" gap="l">
           <Schema
@@ -131,7 +122,6 @@ export default async function Blog({ params }: BlogPageProps) {
         </Column>
       </Row>
       
-      {/* Table of contents sidebar */}
       <Column 
         maxWidth={12} 
         paddingLeft="40" 
