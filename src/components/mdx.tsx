@@ -1,4 +1,4 @@
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import React, { ReactNode } from "react";
 
 import { 
@@ -181,12 +181,26 @@ const components = {
   SmartLink,
 };
 
-type CustomMDXProps = MDXRemoteProps & {
+type CustomMDXProps = {
+  children?: string; // Accept children as a string
   components?: typeof components;
 };
 
-export function CustomMDX(props: CustomMDXProps) {
+export function CustomMDX({ children, components: propComponents }: CustomMDXProps) {
+  // If children is provided, use it as the compiled source
+  if (children) {
+    return (
+      <MDXRemote 
+        compiledSource={children}
+        components={{ ...components, ...(propComponents || {}) }}
+      />
+    );
+  }
+  
+  // Fallback to original behavior if no children
   return (
-    <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
+    <MDXRemote 
+      components={{ ...components, ...(propComponents || {}) }}
+    />
   );
 }
