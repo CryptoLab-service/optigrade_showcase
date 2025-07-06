@@ -75,7 +75,10 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-
+      {/* You’ll continue rendering sections like TableOfContents, Flex layout, and other components here */}
+    </Column>
+  );
+}
       {/* --- Table of Contents --- */}
       {about.tableOfContent.display && (
         <Column
