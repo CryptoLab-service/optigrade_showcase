@@ -52,7 +52,7 @@ export default function About() {
     {
       title: about.certification.title,
       display: about.certification.display,
-      items: about.certification.institutions.map((award) => award.name)
+      items: about.certification.awards.map((award) => award.name)
     },
   ];
   return (
