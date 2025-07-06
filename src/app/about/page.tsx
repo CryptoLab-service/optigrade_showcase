@@ -122,10 +122,8 @@ export default function About() {
           </Column>
         )}
       </Flex>
-    </Column>
-  );
-}
-        {/* --- Main Content --- */}
+
+      {/* --- Main Content --- */}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           {/* --- Header Section --- */}
           <Column
