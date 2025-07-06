@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import * as cookie from "cookie";
+import { serialize } from "cookie"; // Import the specific function you need
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
@@ -8,15 +8,21 @@ export async function POST(request: NextRequest) {
 
   if (!correctPassword) {
     console.error('PAGE_ACCESS_PASSWORD environment variable is not set');
-    return NextResponse.json({ message: "Internal server error" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Internal server error" }, 
+      { status: 500 }
+    );
   }
 
   if (password === correctPassword) {
-    const response = NextResponse.json({ success: true }, { status: 200 });
+    const response = NextResponse.json(
+      { success: true }, 
+      { status: 200 }
+    );
     
     response.headers.set(
       "Set-Cookie",
-      cookie.serialize("authToken", "authenticated", {
+      serialize("authToken", "authenticated", {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         maxAge: 60 * 60,
@@ -27,6 +33,9 @@ export async function POST(request: NextRequest) {
 
     return response;
   } else {
-    return NextResponse.json({ message: "Incorrect password" }, { status: 401 });
+    return NextResponse.json(
+      { message: "Incorrect password" }, 
+      { status: 401 }
+    );
   }
 }
