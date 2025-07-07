@@ -22,7 +22,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // FIX: Add webpack config to resolve context issues
   webpack: (config) => {
     config.resolve.fallback = { 
       ...config.resolve.fallback,
