@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
 // FIX: Ensure proper context creation
-export const ThemeContext = createContext({
+const ThemeContext = createContext({
   theme: 'system',
   setTheme: (theme: string) => {}
 });
