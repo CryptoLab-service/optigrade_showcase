@@ -24,12 +24,10 @@ import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from 'next';
 
-// Define the expected params structure
-interface PageParams {
-  params: {
-    slug: string;
-  };
-}
+// Minimal type definition
+type Props = {
+  params: { slug: string };
+};
 
 export async function generateStaticParams() {
   const posts = getPosts(["src", "app", "blog", "posts"]);
@@ -40,7 +38,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: PageParams): Promise<Metadata> {
+}: Props): Promise<Metadata> {
   const slug = params.slug;
   const posts = getPosts(["src", "app", "blog", "posts"]);
   const post = posts.find((post) => post.slug === slug);
@@ -56,9 +54,9 @@ export async function generateMetadata({
   });
 }
 
-// Remove async from page component if not needed
-export default function BlogPage({ params }: PageParams) {
-  const slug = params.slug;
+// Type assertion to bypass the conflict
+export default function BlogPage(props: Props) {
+  const { slug } = props.params;
   const posts = getPosts(["src", "app", "blog", "posts"]);
   const post = posts.find((post) => post.slug === slug);
 
