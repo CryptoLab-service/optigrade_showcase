@@ -10,3 +10,4 @@ export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
 export * from './ui/LoadingSpinner';
 export * from './ui/ErrorFallback';
+export * from './ThemeScript';
