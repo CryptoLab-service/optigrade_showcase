@@ -4,7 +4,7 @@
 > Founder of Zoe Tech Hub | Creator of Optigrade, TaxBox & NoteHub  
 > Empowering smarter learning experiences across education & health
 
-![Optigrade Demo](https://www.zoetechhub.name.ng/images/og/home.jpg)
+![Optigrade Demo](https://www.zoetechhub.name.ng/public/gallery/images/og/home.jpg)
 
 ---
 
