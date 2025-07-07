@@ -20,8 +20,11 @@ const nextConfig = {
     silenceDeprecations: ["legacy-js-api"],
   },
   typescript: {
-    ignoreBuildErrors: true, // Add this line
+    ignoreBuildErrors: true,
   },
+  // Add this to handle not-found issues
+  skipMiddlewareUrlNormalize: true,
+  skipTrailingSlashRedirect: true,
 };
 
 export default withMDX(nextConfig);
