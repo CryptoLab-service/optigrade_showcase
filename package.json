@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build --no-type-checking",
+    "build": "next build",
     "start": "next start",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
