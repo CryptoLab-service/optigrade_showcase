@@ -6,10 +6,14 @@ import { Analytics } from '@vercel/analytics/next';
 import classNames from 'classnames';
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from '@once-ui-system/core';
-import { Footer, Header, RouteGuard, Providers } from '@/components';
+import { 
+  Footer, 
+  Header, 
+  RouteGuard, 
+  Providers,
+  ThemeScript  // FIX: Consolidated import from components
+} from '@/components';  // FIX: Removed duplicate import
 import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
-import { ThemeScript } from '@/components/ThemeScript';
-import RouteGuard from '@/components/RouteGuard';
 
 export async function generateMetadata() {
   return Meta.generate({
