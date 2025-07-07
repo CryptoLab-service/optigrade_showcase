@@ -6,19 +6,12 @@ import { Analytics } from '@vercel/analytics/next';
 import classNames from 'classnames';
 
 import { Background, Column, Flex, opacity, SpacingToken } from '@once-ui-system/core';
-import { 
-  Footer, 
-  Header, 
-  RouteGuard, 
-  Providers,
-  ThemeScript
-} from '@/components';
+import { Footer, Header, RouteGuard } from '@/components';
+import { ClientProviders } from './client-providers';
 import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
 
-// FIX: Move metadata generation to separate file
 export { generateMetadata } from './metadata';
 
-// FIX: Remove createContext from layout
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -53,7 +46,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <Providers>
+      <ClientProviders>
         <Column as="body" background="page" fillWidth style={{ minHeight: '100vh' }} margin="0" padding="0" horizontal="center">
           <Background
             position="fixed"
@@ -115,7 +108,7 @@ export default async function RootLayout({
           <Footer />
           <Analytics />
         </Column>
-      </Providers>
+      </ClientProviders>
     </Flex>
   );
 }
