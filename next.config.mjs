@@ -19,12 +19,10 @@ const nextConfig = {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
+  // FIX: Temporary ignore build errors
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Add this to handle not-found issues
-  skipMiddlewareUrlNormalize: true,
-  skipTrailingSlashRedirect: true,
 };
 
 export default withMDX(nextConfig);
