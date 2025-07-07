@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { routes, protectedRoutes } from "@/resources";
 import { Flex, Spinner, Button, Heading, Column, PasswordInput } from "@once-ui-system/core";
-import NotFound from "@/app/not-found";
+import NotFound from "@/app/not-found"; // Import from the correct location
 
 interface RouteGuardProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
@@ -26,16 +26,22 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
       setIsPasswordRequired(false);
       setIsAuthenticated(false);
 
-      const checkRouteEnabled = () => {
-        if (!pathname) return false;
+      // Handle undefined pathname
+      if (!pathname) {
+        setLoading(false);
+        return;
+      }
 
-        if (pathname in routes) {
+      const checkRouteEnabled = () => {
+        // Check exact matches
+        if (routes.hasOwnProperty(pathname)) {
           return routes[pathname as keyof typeof routes];
         }
 
+        // Check dynamic routes
         const dynamicRoutes = ["/blog", "/work"] as const;
         for (const route of dynamicRoutes) {
-          if (pathname?.startsWith(route) && routes[route]) {
+          if (pathname.startsWith(route) && routes[route]) {
             return true;
           }
         }
@@ -46,12 +52,15 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
       const routeEnabled = checkRouteEnabled();
       setIsRouteEnabled(routeEnabled);
 
-      if (protectedRoutes[pathname as keyof typeof protectedRoutes]) {
+      // Check if route is protected
+      if (protectedRoutes.hasOwnProperty(pathname)) {
         setIsPasswordRequired(true);
-
-        const response = await fetch("/api/check-auth");
-        if (response.ok) {
-          setIsAuthenticated(true);
+        try {
+          const response = await fetch("/api/check-auth");
+          setIsAuthenticated(response.ok);
+        } catch (e) {
+          console.error("Auth check failed:", e);
+          setIsAuthenticated(false);
         }
       }
 
@@ -62,17 +71,22 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   }, [pathname]);
 
   const handlePasswordSubmit = async () => {
-    const response = await fetch("/api/authenticate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-    });
+    try {
+      const response = await fetch("/api/authenticate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
 
-    if (response.ok) {
-      setIsAuthenticated(true);
-      setError(undefined);
-    } else {
-      setError("Incorrect password");
+      if (response.ok) {
+        setIsAuthenticated(true);
+        setError(undefined);
+      } else {
+        setError("Incorrect password");
+      }
+    } catch (e) {
+      setError("Network error, please try again");
+      console.error("Authentication failed:", e);
     }
   };
 
@@ -85,8 +99,8 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   }
 
   if (!isRouteEnabled) {
-		return <NotFound />;
-	}
+    return <NotFound />;
+  }
 
   if (isPasswordRequired && !isAuthenticated) {
     return (
@@ -111,4 +125,4 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   return <>{children}</>;
 };
 
-export { RouteGuard };
+export default RouteGuard;
