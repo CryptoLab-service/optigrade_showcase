@@ -19,7 +19,7 @@ import {
 } from "@once-ui-system/core";
 import { style, dataStyle } from "@/resources";
 import { iconLibrary } from "@/resources/icons";
-import { ThemeProvider } from './ThemeProvider';
+import { ThemeProvider } from './ThemeProvider'; // Ensure this path matches
 
 export const AppContext = createContext({});
 
