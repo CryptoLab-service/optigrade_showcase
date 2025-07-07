@@ -3,6 +3,7 @@
 import { BorderStyle, ChartMode, ChartVariant, DataThemeProvider, IconProvider, NeutralColor, ScalingSize, Schemes, SolidStyle, SolidType, SurfaceStyle, ThemeProvider, ToastProvider, TransitionStyle } from "@once-ui-system/core";
 import { style, dataStyle } from "../resources";
 import { iconLibrary } from "../resources/icons";
+import { ThemeProvider } from './ThemeProvider';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -16,6 +17,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       surface={style.surface as SurfaceStyle}
       transition={style.transition as TransitionStyle}
       scaling={style.scaling as ScalingSize}
+      {children}
     >
       <DataThemeProvider
         variant={dataStyle.variant as ChartVariant}
