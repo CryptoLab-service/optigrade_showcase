@@ -20,7 +20,7 @@ const nextConfig = {
     silenceDeprecations: ["legacy-js-api"],
   },
   typescript: {
-    ignoreBuildErrors: true, // This is the key fix
+    ignoreBuildErrors: true, // Add this line
   },
 };
 
