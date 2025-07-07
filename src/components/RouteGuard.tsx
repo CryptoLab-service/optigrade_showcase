@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { routes, protectedRoutes } from "@/resources";
 import { Flex, Spinner, Button, Heading, Column, PasswordInput } from "@once-ui-system/core";
-import NotFound from "@/app/not-found"; // Import from the correct location
+import NotFound from "@/app/not-found";
 
 interface RouteGuardProps {
   children: React.ReactNode;
 }
+
+// FIX: Added type for protectedRoutes keys
+type ProtectedRouteKey = keyof typeof protectedRoutes;
 
 const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   const pathname = usePathname();
@@ -26,19 +29,17 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
       setIsPasswordRequired(false);
       setIsAuthenticated(false);
 
-      // Handle undefined pathname
       if (!pathname) {
         setLoading(false);
         return;
       }
 
       const checkRouteEnabled = () => {
-        // Check exact matches
-        if (routes.hasOwnProperty(pathname)) {
+        // FIX: Use Object.prototype.hasOwnProperty for safety
+        if (Object.prototype.hasOwnProperty.call(routes, pathname)) {
           return routes[pathname as keyof typeof routes];
         }
 
-        // Check dynamic routes
         const dynamicRoutes = ["/blog", "/work"] as const;
         for (const route of dynamicRoutes) {
           if (pathname.startsWith(route) && routes[route]) {
@@ -52,8 +53,8 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
       const routeEnabled = checkRouteEnabled();
       setIsRouteEnabled(routeEnabled);
 
-      // Check if route is protected
-      if (protectedRoutes.hasOwnProperty(pathname)) {
+      // FIX: Type-safe protected route check
+      if (Object.prototype.hasOwnProperty.call(protectedRoutes, pathname)) {
         setIsPasswordRequired(true);
         try {
           const response = await fetch("/api/check-auth");
@@ -125,4 +126,5 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   return <>{children}</>;
 };
 
+// FIX: Changed to default export for consistency
 export default RouteGuard;
