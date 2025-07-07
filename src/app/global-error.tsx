@@ -1,6 +1,7 @@
 'use client';
 
 import { Button, Column, Heading, Text } from '@once-ui-system/core';
+import { useEffect } from 'react';
 
 type GlobalErrorProps = {
   error: Error & { digest?: string };
@@ -8,6 +9,13 @@ type GlobalErrorProps = {
 };
 
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
+  // FIX: Added error logging
+  useEffect(() => {
+    console.error('Global Error:', error);
+    // Add your critical error logging here
+    // logCriticalErrorToService(error);
+  }, [error]);
+
   return (
     <html>
       <body>
