@@ -11,3 +11,4 @@ export { CustomMDX } from "@/components/mdx";
 export * from './ui/LoadingSpinner';
 export * from './ui/ErrorFallback';
 export * from './ThemeScript';
+export * from './ThemeProvider';
