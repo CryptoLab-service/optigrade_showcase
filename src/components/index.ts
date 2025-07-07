@@ -3,7 +3,7 @@ export { Footer } from "@/components/Footer";
 export { Mailchimp } from "@/components/Mailchimp";
 export { ProjectCard } from "@/components/ProjectCard";
 export { HeadingLink } from "@/components/HeadingLink";
-export { RouteGuard } from "@/components/RouteGuard";
+export { default as RouteGuard } from "@/components/RouteGuard"; // FIX: Added default export
 export { Providers } from "@/components/Providers";
 export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
