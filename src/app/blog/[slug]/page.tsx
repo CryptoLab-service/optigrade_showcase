@@ -24,11 +24,14 @@ import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from 'next';
 
-type PostParams = {
-  slug: string;
-};
+// Define the expected params structure
+interface PageParams {
+  params: {
+    slug: string;
+  };
+}
 
-export async function generateStaticParams(): Promise<PostParams[]> {
+export async function generateStaticParams() {
   const posts = getPosts(["src", "app", "blog", "posts"]);
   return posts.map((post) => ({
     slug: post.slug,
@@ -37,9 +40,7 @@ export async function generateStaticParams(): Promise<PostParams[]> {
 
 export async function generateMetadata({
   params,
-}: {
-  params: PostParams;
-}): Promise<Metadata> {
+}: PageParams): Promise<Metadata> {
   const slug = params.slug;
   const posts = getPosts(["src", "app", "blog", "posts"]);
   const post = posts.find((post) => post.slug === slug);
@@ -55,7 +56,8 @@ export async function generateMetadata({
   });
 }
 
-export default async function BlogPage({ params }: { params: PostParams }) {
+// Remove async from page component if not needed
+export default function BlogPage({ params }: PageParams) {
   const slug = params.slug;
   const posts = getPosts(["src", "app", "blog", "posts"]);
   const post = posts.find((post) => post.slug === slug);
