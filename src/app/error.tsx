@@ -1,6 +1,7 @@
 'use client';
 
 import { Button, Column, Heading, Text } from '@once-ui-system/core';
+import { useEffect } from 'react';
 
 type ErrorProps = {
   error: Error & { digest?: string };
@@ -8,6 +9,13 @@ type ErrorProps = {
 };
 
 export default function Error({ error, reset }: ErrorProps) {
+  // FIX: Added error logging
+  useEffect(() => {
+    console.error('Client Error:', error);
+    // Add your error logging service here
+    // logErrorToService(error);
+  }, [error]);
+
   return (
     <Column horizontal="center" vertical="center" minHeight="100vh" gap="m">
       <Heading variant="display-strong-m">Something went wrong!</Heading>
