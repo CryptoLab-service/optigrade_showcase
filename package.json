@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postinstall": "next telemetry disable",
     "start": "next start",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
