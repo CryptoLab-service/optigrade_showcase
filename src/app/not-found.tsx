@@ -1,15 +1,18 @@
-import { Column, Heading, Text } from "@once-ui-system/core";
+// src/app/not-found.tsx
+import { Column, Heading, Text, Button } from '@once-ui-system/core';
+import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <Column as="section" fill center paddingBottom="160">
-      <Text marginBottom="s" variant="display-strong-xl">
-        404
+    <Column horizontal="center" vertical="center" minHeight="100vh" gap="m">
+      <Heading variant="display-strong-l">404</Heading>
+      <Text variant="body-strong-m">Page not found</Text>
+      <Text variant="body-default-m" textAlign="center">
+        Sorry, we couldn't find the page you're looking for.
       </Text>
-      <Heading marginBottom="l" variant="display-default-xs">
-        Page Not Found
-      </Heading>
-      <Text onBackground="neutral-weak">The page you are looking for does not exist.</Text>
+      <Link href="/">
+        <Button marginTop="l">Go back home</Button>
+      </Link>
     </Column>
   );
 }
