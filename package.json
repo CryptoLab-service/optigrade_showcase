@@ -30,6 +30,7 @@
     "sass": "^1.72.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.3.1",
     "@types/node": "^20.11.7",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18",
@@ -39,8 +40,7 @@
     "eslint-config-next": "^15.3.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "typescript": "^5.5.4",
     "prettier": "^3.3.1",
-    "@next/bundle-analyzer": "^13.3.1"
+    "typescript": "^5.5.2"
   }
 }
