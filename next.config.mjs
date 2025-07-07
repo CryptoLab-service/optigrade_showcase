@@ -19,10 +19,19 @@ const nextConfig = {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
-  // FIX: Temporary ignore build errors
   typescript: {
     ignoreBuildErrors: true,
   },
+  // FIX: Add webpack config to resolve context issues
+  webpack: (config) => {
+    config.resolve.fallback = { 
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false
+    };
+    return config;
+  }
 };
 
 export default withMDX(nextConfig);
