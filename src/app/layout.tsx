@@ -9,6 +9,7 @@ import { Background, Column, Flex, Meta, opacity, SpacingToken } from '@once-ui-
 import { Footer, Header, RouteGuard, Providers } from '@/components';
 import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
 import { ThemeScript } from '@/components/ThemeScript';
+import RouteGuard from '@/components/RouteGuard';
 
 export async function generateMetadata() {
   return Meta.generate({
