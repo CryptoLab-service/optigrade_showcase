@@ -1,11 +1,15 @@
-// src/components/ThemeProvider.tsx
 'use client';
 
 import { createContext, useContext, useEffect, useState } from 'react';
 
-const ThemeContext = createContext({
+interface ThemeContextType {
+  theme: string;
+  setTheme: (theme: string) => void;
+}
+
+const ThemeContext = createContext<ThemeContextType>({
   theme: 'system',
-  setTheme: (theme: string) => {},
+  setTheme: () => {},
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
