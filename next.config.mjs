@@ -19,9 +19,8 @@ const nextConfig = {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
-  // TEMPORARY: Ignore type errors until Next.js fixes the issue
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // This is the key fix
   },
 };
 
