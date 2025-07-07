@@ -24,9 +24,10 @@ import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from 'next';
 
-// Minimal type definition
-type Props = {
+// Minimal type definition that matches Next.js expectations
+type PageProps = {
   params: { slug: string };
+  searchParams?: Record<string, string | string[] | undefined>;
 };
 
 export async function generateStaticParams() {
@@ -38,7 +39,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: Props): Promise<Metadata> {
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const slug = params.slug;
   const posts = getPosts(["src", "app", "blog", "posts"]);
   const post = posts.find((post) => post.slug === slug);
@@ -54,9 +57,12 @@ export async function generateMetadata({
   });
 }
 
-// Type assertion to bypass the conflict
-export default function BlogPage(props: Props) {
-  const { slug } = props.params;
+// Type assertion to bypass Next.js type conflict
+export default function BlogPage(props: PageProps) {
+  // Workaround: Cast props to any to bypass type system conflict
+  const params = (props as any).params as { slug: string };
+  const slug = params.slug;
+  
   const posts = getPosts(["src", "app", "blog", "posts"]);
   const post = posts.find((post) => post.slug === slug);
 
