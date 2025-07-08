@@ -1,64 +1,46 @@
 'use client';
 
-import { createContext } from 'react';
-import { 
-  BorderStyle, 
-  ChartMode, 
-  ChartVariant, 
-  DataThemeProvider, 
-  IconProvider, 
-  NeutralColor, 
-  ScalingSize, 
-  Schemes, 
-  SolidStyle, 
-  ThemeProvider as CoreThemeProvider, 
-  ToastProvider, 
-  TransitionStyle, 
-  SolidType, 
-  SurfaceStyle 
+import {
+  DataThemeProvider,
+  IconProvider,
+  ThemeProvider,
+  ToastProvider,
 } from "@once-ui-system/core";
 import { style, dataStyle } from "@/resources";
 import { iconLibrary } from "@/resources/icons";
-import { ThemeProvider } from '../components/ThemeProvider'; // Ensure this path matches
-
-export const AppContext = createContext({});
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
-    <AppContext.Provider value={{}}>
-      <ThemeProvider>
-        <CoreThemeProvider
-          brand={style.brand as Schemes}
-          accent={style.accent as Schemes}
-          neutral={style.neutral as NeutralColor}
-          solid={style.solid as SolidType}
-          solidStyle={style.solidStyle as SolidStyle}
-          border={style.border as BorderStyle}
-          surface={style.surface as SurfaceStyle}
-          transition={style.transition as TransitionStyle}
-          scaling={style.scaling as ScalingSize}
-        >
-          <DataThemeProvider
-            variant={dataStyle.variant as ChartVariant}
-            mode={dataStyle.mode as ChartMode}
-            height={dataStyle.height}
-            axis={{
-              stroke: dataStyle.axis.stroke
-            }}
-            tick={{
-              fill: dataStyle.tick.fill,
-              fontSize: dataStyle.tick.fontSize,
-              line: dataStyle.tick.line
-            }}
-          >
-            <ToastProvider>
-              <IconProvider icons={iconLibrary}>
-                {children}
-              </IconProvider>
-            </ToastProvider>
-          </DataThemeProvider>
-        </CoreThemeProvider>
-      </ThemeProvider>
-    </AppContext.Provider>
+    <ThemeProvider
+      brand={"custom"}
+      accent={"custom"}
+      neutral={style.neutral}
+      solid={style.solid}
+      solidStyle={style.solidStyle}
+      border={style.border}
+      surface={style.surface}
+      transition={style.transition}
+      scaling={style.scaling}
+    >
+      <DataThemeProvider
+        variant={dataStyle.variant}
+        mode={dataStyle.mode}
+        height={dataStyle.height}
+        axis={{
+          stroke: dataStyle.axis.stroke,
+        }}
+        tick={{
+          fill: dataStyle.tick.fill,
+          fontSize: dataStyle.tick.fontSize,
+          line: dataStyle.tick.line,
+        }}
+      >
+        <ToastProvider>
+          <IconProvider icons={iconLibrary}>
+            {children}
+          </IconProvider>
+        </ToastProvider>
+      </DataThemeProvider>
+    </ThemeProvider>
   );
 }
