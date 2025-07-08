@@ -1,8 +1,7 @@
 // src/components/ErrorBoundary.tsx
 'use client';
 
-import { Component, ErrorInfo, ReactNode } from 'react';
-import { NotFound } from '@/components/NotFound';
+import { Component, ReactNode } from 'react';
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -12,23 +11,25 @@ interface ErrorBoundaryState {
   hasError: boolean;
 }
 
-export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(_: Error): ErrorBoundaryState {
+  static getDerivedStateFromError() {
     return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("Uncaught error:", error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      return <NotFound />;
+      return (
+        <div style={{ padding: '2rem', textAlign: 'center' }}>
+          <h1>Something went wrong</h1>
+          <p>Please try reloading the page</p>
+          <button onClick={() => window.location.reload()}>Reload</button>
+        </div>
+      );
     }
 
     return this.props.children;
