@@ -1,24 +1,5 @@
 'use client';
 
-import { Column, Heading, Text, Button } from '@once-ui-system/core';
-import Link from 'next/link';
-import { useContext } from 'react';
-import { AppContext } from './client-providers';
-
 export default function NotFound() {
-  // Consume context using useContext hook
-  const context = useContext(AppContext);
-
-  return (
-    <Column horizontal="center" vertical="center" minHeight="100vh" gap="m">
-      <Heading variant="display-strong-l">404</Heading>
-      <Text variant="body-strong-m">Page not found</Text>
-      <Text variant="body-default-m" textAlign="center">
-        Sorry, we couldn't find the page you're looking for.
-      </Text>
-      <Link href="/">
-        <Button marginTop="l">Go back home</Button>
-      </Link>
-    </Column>
-  );
+  return <h1>404 - Not Found</h1>;
 }
