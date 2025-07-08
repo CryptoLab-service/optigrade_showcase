@@ -1,7 +1,7 @@
-// next.config.js
-const path = require('path');
+// next.config.mjs (change file extension to .mjs)
+import path from 'path';
 
-module.exports = {
+export default {
   // ...existing config
   webpack: (config) => {
     config.resolve.alias = {
