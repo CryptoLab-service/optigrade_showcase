@@ -1,21 +1,23 @@
+// src/app/ThemeProvider.tsx
 'use client';
 
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
-type ThemeContextType = {
+interface ThemeContextType {
   theme: string;
   setTheme: (theme: string) => void;
-};
+}
 
-const ThemeContext = createContext<ThemeContextType>({
+export const ThemeContext = createContext<ThemeContextType>({
   theme: 'system',
-  setTheme: () => {},
+  setTheme: () => {}
 });
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState('system');
 
   useEffect(() => {
+    // Only run in client environment
     const storedTheme = localStorage.getItem('data-theme') || 'system';
     setTheme(storedTheme);
   }, []);
@@ -28,4 +30,3 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 }
 
 export const useTheme = () => useContext(ThemeContext);
-
