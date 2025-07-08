@@ -8,7 +8,7 @@ const ThemeContext = createContext({
   setTheme: (theme: string) => {}
 });
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
+// export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState('system');
 
   useEffect(() => {
@@ -23,4 +23,4 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export const useTheme = () => useContext(ThemeContext);
+// export const useTheme = () => useContext(ThemeContext);
