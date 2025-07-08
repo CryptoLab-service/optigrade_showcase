@@ -1,5 +1,4 @@
 'use client';
-
 import { Column, Heading, Text, Button } from '@once-ui-system/core';
 import Link from 'next/link';
 import { AppContext } from './client-providers';
