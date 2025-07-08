@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import { Background, Column, Flex, opacity, SpacingToken } from '@once-ui-system/core';
 import { Footer, Header, RouteGuard } from '@/components';
 import { ClientProviders } from './client-providers';
-import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
+import { effects, fonts } from '@/resources';
 
 export { generateMetadata } from './metadata';
 
@@ -31,20 +31,6 @@ export default async function RootLayout({
       )}
     >
       <head>
-        <ThemeScript 
-          config={{
-            brand: style.brand,
-            accent: style.accent,
-            neutral: style.neutral,
-            solid: style.solid,
-            'solid-style': style.solidStyle,
-            border: style.border,
-            surface: style.surface,
-            transition: style.transition,
-            scaling: style.scaling,
-            'viz-style': dataStyle.variant,
-          }}
-        />
       </head>
       <ClientProviders>
         <Column as="body" background="page" fillWidth style={{ minHeight: '100vh' }} margin="0" padding="0" horizontal="center">
