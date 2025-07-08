@@ -11,17 +11,18 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "typescript": "5.4.5"
   },
   "dependencies": {
-    "@next/mdx": "^15.3.5",
+    "@next/mdx": "^15.3.6",
     "@once-ui-system/core": "^1.3.11",
     "@vercel/analytics": "1.2.1",
     "@vercel/speed-insights": "latest",
     "cookie": "^1.0.2",
     "framer-motion": "^12.23.0",
     "gray-matter": "^4.0.3",
-    "next": "^15.3.5",
+    "next": "^15.3.6",
     "next-mdx-remote": "^4.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -43,5 +44,9 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "^3.3.1",
     "typescript": "^5.5.2"
+  }
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
