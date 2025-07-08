@@ -1,38 +1,48 @@
 'use client';
 
-import {
-  DataThemeProvider,
-  IconProvider,
-  ThemeProvider,
-  ToastProvider,
+import { 
+  BorderStyle, 
+  ChartMode, 
+  ChartVariant, 
+  DataThemeProvider, 
+  IconProvider, 
+  NeutralColor, 
+  ScalingSize, 
+  Schemes, 
+  SolidStyle, 
+  ThemeProvider as CoreThemeProvider, 
+  ToastProvider, 
+  TransitionStyle, 
+  SolidType, 
+  SurfaceStyle 
 } from "@once-ui-system/core";
 import { style, dataStyle } from "@/resources";
 import { iconLibrary } from "@/resources/icons";
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider
-      brand={"custom"}
-      accent={"custom"}
-      neutral={style.neutral}
-      solid={style.solid}
-      solidStyle={style.solidStyle}
-      border={style.border}
-      surface={style.surface}
-      transition={style.transition}
-      scaling={style.scaling}
+    <CoreThemeProvider
+      brand={style.brand as Schemes}
+      accent={style.accent as Schemes}
+      neutral={style.neutral as NeutralColor}
+      solid={style.solid as SolidType}
+      solidStyle={style.solidStyle as SolidStyle}
+      border={style.border as BorderStyle}
+      surface={style.surface as SurfaceStyle}
+      transition={style.transition as TransitionStyle}
+      scaling={style.scaling as ScalingSize}
     >
       <DataThemeProvider
-        variant={dataStyle.variant}
-        mode={dataStyle.mode}
+        variant={dataStyle.variant as ChartVariant}
+        mode={dataStyle.mode as ChartMode}
         height={dataStyle.height}
         axis={{
-          stroke: dataStyle.axis.stroke,
+          stroke: dataStyle.axis.stroke
         }}
         tick={{
           fill: dataStyle.tick.fill,
           fontSize: dataStyle.tick.fontSize,
-          line: dataStyle.tick.line,
+          line: dataStyle.tick.line
         }}
       >
         <ToastProvider>
@@ -41,6 +51,6 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
           </IconProvider>
         </ToastProvider>
       </DataThemeProvider>
-    </ThemeProvider>
+    </CoreThemeProvider>
   );
 }
