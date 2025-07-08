@@ -1,14 +1,18 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
-// FIX: Ensure proper context creation
-const ThemeContext = createContext({
+type ThemeContextType = {
+  theme: string;
+  setTheme: (theme: string) => void;
+};
+
+const ThemeContext = createContext<ThemeContextType>({
   theme: 'system',
-  setTheme: (theme: string) => {}
+  setTheme: () => {},
 });
 
-// export function ThemeProvider({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState('system');
 
   useEffect(() => {
@@ -23,4 +27,5 @@ const ThemeContext = createContext({
   );
 }
 
-// export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => useContext(ThemeContext);
+

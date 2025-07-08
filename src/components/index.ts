@@ -16,4 +16,4 @@ export { ThemeScript } from './ThemeScript';
 
 // FIX: Correct ThemeProvider exports
 export { ThemeProvider } from './ThemeProvider';
-export { useTheme } from './ThemeProvider';
+// export { useTheme } from './ThemeProvider';
