@@ -1,6 +1,5 @@
-// src/app/layout.tsx
 import { ClientProviders } from './client-providers';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
