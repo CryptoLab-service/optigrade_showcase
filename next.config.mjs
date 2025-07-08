@@ -1,14 +1,36 @@
-// next.config.mjs (change file extension to .mjs)
-import path from 'path';
+// next.config.mjs
+import mdx from "@next/mdx";
 
-export default {
-  // ...existing config
+const withMDX = mdx({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
+
+const nextConfig = {
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  transpilePackages: ["next-mdx-remote"],
+  experimental: {
+    mdxRs: true,
+  },
+  sassOptions: {
+    compiler: "modern",
+    silenceDeprecations: ["legacy-js-api"],
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'react': path.resolve('./node_modules/react'),
-      'react-dom': path.resolve('./node_modules/react-dom')
+    config.resolve.fallback = { 
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false
     };
     return config;
   }
 };
+
+export default withMDX(nextConfig);
