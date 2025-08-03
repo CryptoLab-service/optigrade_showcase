@@ -1,5 +1,12 @@
-import { Person } from './types';
+/**
+* ====================================================================================================
+ *                     CONTENT INTERFACES
+ * ====================================================================================================
+ */
 
+/**
+ * Person interface representing personal information
+ */
 interface Person {
   firstName: string;
   lastName: string;
@@ -11,18 +18,27 @@ interface Person {
   languages: string[];
 }
 
+/**
+ * Social media platform interface
+ */
 interface Social {
   name: string;
   icon: string;
   link: string;
 }
 
+/**
+ * Newsletter configuration interface
+ */
 interface Newsletter {
   display: boolean;
   title: string;
   description: string;
 }
 
+/**
+ * Home page configuration interface
+ */
 interface Home {
   path: string;
   image: string;
@@ -38,6 +54,39 @@ interface Home {
   subline: string;
 }
 
+/**
+ * Experience item for About section
+ */
+interface Experience {
+  company: string;
+  timeframe: string;
+  role: string;
+  achievements: string[];
+  images: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  }[];
+}
+
+/**
+ * Skill item for Technical Skills section
+ */
+interface Skill {
+  title: string;
+  description: string;
+  images: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  }[];
+}
+
+/**
+ * About page configuration interface
+ */
 interface About {
   path: string;
   label: string;
@@ -62,18 +111,7 @@ interface About {
   work: {
     display: boolean;
     title: string;
-    experiences: {
-      company: string;
-      timeframe: string;
-      role: string;
-      achievements: string[];
-      images: {
-        src: string;
-        alt: string;
-        width: number;
-        height: number;
-      }[];
-    }[];
+    experiences: Experience[];
   };
   studies: {
     display: boolean;
@@ -86,16 +124,7 @@ interface About {
   technical: {
     display: boolean;
     title: string;
-    skills: {
-      title: string;
-      description: string;
-      images: {
-        src: string;
-        alt: string;
-        width: number;
-        height: number;
-      }[];
-    }[];
+    skills: Skill[];
   };
   certification: {
     display: boolean;
@@ -107,6 +136,9 @@ interface About {
   };
 }
 
+/**
+ * Blog page configuration interface
+ */
 interface Blog {
   path: string;
   label: string;
@@ -114,6 +146,9 @@ interface Blog {
   description: string;
 }
 
+/**
+ * Work page configuration interface
+ */
 interface Work {
   path: string;
   label: string;
@@ -121,18 +156,35 @@ interface Work {
   description: string;
 }
 
+/**
+ * Gallery image interface
+ */
+interface GalleryImage {
+  src: string;
+  alt: string;
+  orientation: string;
+}
+
+/**
+ * Gallery page configuration interface
+ */
 interface Gallery {
   path: string;
   label: string;
   title: string;
   description: string;
-  images: {
-    src: string;
-    alt: string;
-    orientation: string;
-  }[];
+  images: GalleryImage[];
 }
 
+/**
+ * ====================================================================================================
+ *                     DATA EXPORTS
+ * ====================================================================================================
+ */
+
+/**
+ * Personal information configuration
+ */
 export const person: Person = {
   firstName: "Tolulope",
   lastName: "John",
@@ -146,12 +198,18 @@ export const person: Person = {
   languages: ["English", "Yoruba", "Hausa"],
 };
 
+/**
+ * Newsletter subscription configuration
+ */
 export const newsletter: Newsletter = {
   display: true,
   title: "Subscribe to get updates on design and technology trends",
   description: "I occasionally write about design, technology, and the intersection of creativity, UX, and engineering.",
 };
 
+/**
+ * Social media links configuration
+ */
 export const social: Social[] = [
   {
     name: "GitHub",
@@ -175,6 +233,9 @@ export const social: Social[] = [
   },
 ];
 
+/**
+ * Home page configuration
+ */
 export const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
@@ -190,6 +251,9 @@ export const home: Home = {
   subline: "I'm Toluwalope John — designer, creative technologist, and founder of Zoe Tech Hub. I prototype ideas into purposeful digital tools across education and health, like Optigrade for academic analytics, TasxBox for simplified daily task workflows, and NoteHub for collaborative documentation. I believe in intuitive design and agile engineering for real-world change.",
 };
 
+/**
+ * About page configuration
+ */
 export const about: About = {
   path: "/about",
   label: "About",
@@ -211,6 +275,8 @@ export const about: About = {
     title: "Introduction",
     description: "Toluwalope John is a UI/UX and graphics designer, entry-level data scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel intuitive and impactful. He's currently channeling that energy into Optigrade—a platform he's developing to rethink and enhance academic performance in Nigerian higher institutions.",
   },
+  
+  // =================================== WORK EXPERIENCE SECTION ===================================
   work: {
     display: true,
     title: "Work Experience",
@@ -228,7 +294,19 @@ export const about: About = {
         images: [
           {
             src: "/tools/tools1.jpg",
-            alt: "Once UI Project",
+            alt: "Figma UI Design",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/tools/tools1.jpg",
+            alt: "Figma components",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/tools/tools1.jpg",
+            alt: "Figma components",
             width: 16,
             height: 9,
           },
@@ -254,6 +332,8 @@ export const about: About = {
       },
     ],
   },
+  
+  // =================================== EDUCATION SECTION ===================================
   studies: {
     display: true,
     title: "Studies",
@@ -268,6 +348,8 @@ export const about: About = {
       },
     ],
   },
+  
+  // =================================== TECHNICAL SKILLS SECTION ===================================
   technical: {
     display: true,
     title: "Technical Skills",
@@ -328,6 +410,8 @@ export const about: About = {
       },
     ],
   },
+  
+  // =================================== CERTIFICATIONS SECTION ===================================
   certification: {
     display: true,
     title: "Certification",
@@ -360,6 +444,9 @@ export const about: About = {
   },
 };
 
+/**
+ * Blog page configuration
+ */
 export const blog: Blog = {
   path: "/blog",
   label: "Blog",
@@ -367,6 +454,9 @@ export const blog: Blog = {
   description: `Read what ${person.name} has been up to recently`,
 };
 
+/**
+ * Work page configuration
+ */
 export const work: Work = {
   path: "/work",
   label: "Work",
@@ -374,6 +464,9 @@ export const work: Work = {
   description: `Design and dev projects by ${person.name}`,
 };
 
+/**
+ * Gallery page configuration
+ */
 export const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
