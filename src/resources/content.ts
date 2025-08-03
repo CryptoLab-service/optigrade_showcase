@@ -3,7 +3,7 @@
  *                     CONTENT INTERFACES
  * ====================================================================================================
  */
-
+import { Person } from './types';
 /**
  * Person interface representing personal information
  */
