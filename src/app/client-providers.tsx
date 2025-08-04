@@ -24,7 +24,7 @@ export const AppContext = createContext(null);
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
-    <AppContext.Provider value={/* context value */}>
+    <AppContext.Provider value={null}> {/* Removed invalid comment */}
       <CoreThemeProvider
         brand={style.brand as Schemes}
         accent={style.accent as Schemes}
