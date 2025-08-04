@@ -1,6 +1,5 @@
-// =========================================================
-//                       INTERFACES
-// =========================================================
+import { Person } from './types';
+
 interface Person {
   firstName: string;
   lastName: string;
@@ -134,9 +133,6 @@ interface Gallery {
   }[];
 }
 
-// =========================================================
-//                   PERSON CONFIGURATION
-// =========================================================
 export const person: Person = {
   firstName: "Tolulope",
   lastName: "John",
@@ -150,18 +146,12 @@ export const person: Person = {
   languages: ["English", "Yoruba", "Hausa"],
 };
 
-// =========================================================
-//                  NEWSLETTER CONFIGURATION
-// =========================================================
 export const newsletter: Newsletter = {
   display: true,
   title: "Subscribe to get updates on design and technology trends",
   description: "I occasionally write about design, technology, and the intersection of creativity, UX, and engineering.",
 };
 
-// =========================================================
-//                    SOCIAL MEDIA LINKS
-// =========================================================
 export const social: Social[] = [
   {
     name: "GitHub",
@@ -185,9 +175,6 @@ export const social: Social[] = [
   },
 ];
 
-// =========================================================
-//                     HOME PAGE CONFIG
-// =========================================================
 export const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
@@ -203,9 +190,6 @@ export const home: Home = {
   subline: "I'm Toluwalope John — designer, creative technologist, and founder of Zoe Tech Hub. I prototype ideas into purposeful digital tools across education and health, like Optigrade for academic analytics, TasxBox for simplified daily task workflows, and NoteHub for collaborative documentation. I believe in intuitive design and agile engineering for real-world change.",
 };
 
-// =========================================================
-//                     ABOUT PAGE CONFIG
-// =========================================================
 export const about: About = {
   path: "/about",
   label: "About",
@@ -227,8 +211,6 @@ export const about: About = {
     title: "Introduction",
     description: "Toluwalope John is a UI/UX and graphics designer, entry-level data scientist, and budding software developer and AI agent. With a passion for creating purposeful visuals and seamless user experiences, he bridges design and technology to craft solutions that feel intuitive and impactful. He's currently channeling that energy into Optigrade—a platform he's developing to rethink and enhance academic performance in Nigerian higher institutions.",
   },
-  
-  // ----------------- Work Experience -----------------
   work: {
     display: true,
     title: "Work Experience",
@@ -284,8 +266,6 @@ export const about: About = {
       },
     ],
   },
-  
-  // ----------------- Education -----------------
   studies: {
     display: true,
     title: "Studies",
@@ -300,8 +280,6 @@ export const about: About = {
       },
     ],
   },
-  
-  // ----------------- Technical Skills -----------------
   technical: {
     display: true,
     title: "Technical Skills",
@@ -362,8 +340,6 @@ export const about: About = {
       },
     ],
   },
-  
-  // ----------------- Certifications -----------------
   certification: {
     display: true,
     title: "Certification",
@@ -396,9 +372,6 @@ export const about: About = {
   },
 };
 
-// =========================================================
-//                     BLOG PAGE CONFIG
-// =========================================================
 export const blog: Blog = {
   path: "/blog",
   label: "Blog",
@@ -406,9 +379,6 @@ export const blog: Blog = {
   description: `Read what ${person.name} has been up to recently`,
 };
 
-// =========================================================
-//                     WORK PAGE CONFIG
-// =========================================================
 export const work: Work = {
   path: "/work",
   label: "Work",
@@ -416,9 +386,6 @@ export const work: Work = {
   description: `Design and dev projects by ${person.name}`,
 };
 
-// =========================================================
-//                    GALLERY PAGE CONFIG
-// =========================================================
 export const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
